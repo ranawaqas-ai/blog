@@ -1,9 +1,5 @@
 ---
-title:  "Rana Waqas"
-author: rana
-date:   2023-12-08 14:13:00 +0200
 categories: Portfolio
-layout: post
 tags: [intro]
 ---
 
