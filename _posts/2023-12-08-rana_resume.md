@@ -9,6 +9,7 @@ author: Rana M Waqas
 # Rana M Waqas
 
 **Phone:** 0905369569614  
+**Paksitani Phone:** 0923217969614  
 **Email:** waqaskhan137@gmail.com
 
 ## Summary
