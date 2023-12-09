@@ -3,7 +3,7 @@ layout: post
 title:  "Welcome to Jekyll!"
 date:   2023-12-08 14:13:00 +0200
 categories: Portfolio
-author: Rana M Waqas
+author: Rana Waqas
 ---
 
 # Rana M Waqas
