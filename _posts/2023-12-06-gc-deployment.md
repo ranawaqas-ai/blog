@@ -1,9 +1,10 @@
 ---
-layout: post
 title:  "Hosting a Ghost Blog on Google Cloud"
+author: "rana"
+layout: post
 date:   2023-12-06 14:13:00 +0200
 categories: google-cloud
-author: Rana M Waqas
+
 ---
 
 
