@@ -1,9 +1,10 @@
 ---
-layout: post
 title:  "Rana Waqas"
+author: rana
 date:   2023-12-08 14:13:00 +0200
 categories: Portfolio
-author: Rana Waqas
+layout: post
+tags: [intro]
 ---
 
 **Phone:** 0905369569614  
