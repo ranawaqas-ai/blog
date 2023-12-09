@@ -1,15 +1,12 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Rana Waqas"
 date:   2023-12-08 14:13:00 +0200
 categories: Portfolio
 author: Rana Waqas
 ---
 
-# Rana M Waqas
-
 **Phone:** 0905369569614  
-**Paksitani Phone:** 0923217969614  
 **Email:** waqaskhan137@gmail.com
 
 ## Summary
