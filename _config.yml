@@ -91,7 +91,7 @@ comments:
   giscus:
     repo: waqaskhan137/ranawaqas # <gh-username>/<repo>
     repo_id: 729155937
-    category: general # default category
+    category: announcements # default category
     category_id:
     mapping: # optional, default to 'pathname'
     input_position: # optional, default to 'bottom'
