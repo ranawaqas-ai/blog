@@ -1,4 +1,5 @@
 ---
+title: Rana M Waqas
 categories: Portfolio
 tags: [intro]
 ---
