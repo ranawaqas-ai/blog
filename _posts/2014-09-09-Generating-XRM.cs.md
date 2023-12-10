@@ -3,9 +3,6 @@ category: crm
 tag: [ms-dynamics, crm]
 ---
 
-# Generating XRM.cs
-
-
 This is the command by which need to execute while you are in Crm SDK path
 
 

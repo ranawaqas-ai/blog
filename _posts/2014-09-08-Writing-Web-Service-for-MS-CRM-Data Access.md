@@ -3,8 +3,6 @@ category: crm
 tag: [ms-dynamics, crm]
 ---
 
-# Writing Web Service for MS CRM Data Access
-
 
 Concept
 

@@ -3,9 +3,6 @@ category: crm
 tag: [ms-dynamics, crm]
 ---
 
-# Installing MS SQL and MS CRM
-
-
 [MS SQL](http://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=1279)
 
 

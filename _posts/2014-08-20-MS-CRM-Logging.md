@@ -3,9 +3,6 @@ category: crm
 tag: [ms-dynamics, crm]
 ---
 
-# MS CRM Logging
-
-
 ## Plan of Action:
 
 

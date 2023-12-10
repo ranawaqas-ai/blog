@@ -3,8 +3,6 @@ category: crm
 tag: [ms-dynamics, crm]
 ---
 
-# MS CRM Data Access
-
 
 Before I have done the Data access using the linq queries but that take effort, So now I am going for the supported way which has been provided in MS CRM SDK, Using IOraganization with late bound methodology.
 

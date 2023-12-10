@@ -3,8 +3,6 @@ category: crm
 tag: [ms-dynamics, crm]
 ---
 
-# CRM 2013 – Actions Are My New Favorite Feature
-
 
  ![](https://1.gravatar.com/avatar/daaa3d72cec6aa23016f24f24aefa8f028e276aba4ad23976a9cdd095ca3ad9a?s=32&d=identicon&r=G)[XRM Guy](http://xrmguy.com/2014/03/10/crm-2013-actions-are-my-new-favorite-feature)
 

@@ -3,9 +3,6 @@ category: crm
 tag: [ms-dynamics, crm]
 ---
 
-# Calling external Web Service from a CRM 2011 Plug in
-
-
 
 > Gotta try this one !
 > 
