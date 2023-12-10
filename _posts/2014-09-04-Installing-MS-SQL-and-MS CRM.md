@@ -1,3 +1,8 @@
+---
+category: crm
+tag: [ms-dynamics, crm]
+---
+
 # Installing MS SQL and MS CRM
 
 
