@@ -5,8 +5,7 @@ tag: [neural-network]
 date: 2023-12-10 3:23 AM 
 ---
 
-![Journey](https://i.imgur.com/kd4A2Wi.png)
-<img src="https://i.imgur.com/kd4A2Wi.png" width="500" height="600">
+![Journey](https://i.imgur.com/1PZzNI8.png)
 
 As an engineer I am deeply fascinated by Artificial General Intelligence (AGI), I've spent countless hours navigating the complex and ever-evolving landscape of neural networks. Through my journey, I've come to realize the importance of a structured approach to studying this field. Here, I want to share a roadmap that I've found incredibly useful for understanding the rich history, foundational concepts, and cutting-edge advancements in neural networks.
 
