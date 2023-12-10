@@ -2,6 +2,7 @@
 title: My Journey Through Neural Network Research
 category: Research and Development
 tag: [neural-network]
+date: 2023-12-10 3:23 AM 
 ---
 
 
