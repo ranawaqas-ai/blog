@@ -144,37 +144,40 @@ The discussion is going on here
 <https://community.dynamics.com/crm/f/117/t/143340.aspx>
 
 
- `if (context.InputParameters.Contains("Target") &&  
 
-context.InputParameters["Target"] is Entity)  
+```c#
+if (context.InputParameters.Contains("Target") &&
 
-{  
+  context.InputParameters["Target"] is Entity)
 
-// Obtain the target entity from the input parameters.  
+{
 
-Entity entity = (Entity)context.InputParameters["Target"];  
+  // Obtain the target entity from the input parameters.  
 
-//  
+  Entity entity = (Entity) context.InputParameters["Target"];
 
-//getting the phone number  
+  //  
 
-string phone1=null;  
+  //getting the phone number  
 
-if (entity.Attributes.Contains("Telephone1"))  
+  string phone1 = null;
 
-{  
+  if (entity.Attributes.Contains("Telephone1"))
 
-phone1 = entity.GetAttributeValue("Telephone1");  
+  {
 
-}  
+    phone1 = entity.GetAttributeValue("Telephone1");
 
-// Verify that the target entity represents an account.  
+  }
 
-// If not, this plug-in was not registered correctly.  
+  // Verify that the target entity represents an account.  
 
-if (entity.LogicalName != "account")  
+  // If not, this plug-in was not registered correctly.  
 
-return;`
+  if (entity.LogicalName != "account")
+
+    return;
+  `
 
 
 try  
@@ -259,6 +262,6 @@ throw;
 
 }  
 
-
+```
 
 
