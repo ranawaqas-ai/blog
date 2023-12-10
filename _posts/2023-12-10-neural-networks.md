@@ -26,19 +26,19 @@ In future I will be sharing my review of the following papers.
 **Revival and Advancements (2006-2012):** I delved into the era when deep learning gained momentum. Geoffrey Hinton's work on deep belief networks in 2006 was a game-changer. Understanding Convolutional Neural Networks (CNNs) through Yann LeCun's work and the landmark victory of AlexNet in the ImageNet Challenge (2012) were key highlights.
 
 **Must-Read Papers:**
-- Hinton, Osindero, and Teh's "A fast learning algorithm for deep belief nets"
-- LeCun, Bottou, Bengio, and Haffner's "Gradient-Based Learning Applied to Document Recognition"
-- Krizhevsky, Sutskever, and Hinton's "ImageNet Classification with Deep Convolutional Neural Networks"
+- Hinton, Osindero, and Teh's ["A fast learning algorithm for deep belief nets"](/assets/papers/hinton2006.pdf)
+- LeCun, Bottou, Bengio, and Haffner's ["Gradient-Based Learning Applied to Document Recognition"](/assets/papers/lecun1998.pdf)
+- Krizhevsky, Sutskever, and Hinton's ["ImageNet Classification with Deep Convolutional Neural Networks"](/assets/papers/krizhevsky2017.pdf)
 
 ### **Exploring Specialized Architectures**
 
 **Diversification (2013-Present):** My exploration led me to the diversification and specialization in neural networks. I studied architectures like RNNs, LSTMs, GANs, and the revolutionary Transformers. The advancements in natural language processing, evident through models like BERT and GPT, were particularly intriguing.
 
 **Key Papers for Insight:**
-- "Sequence to Sequence Learning with Neural Networks" by Sutskever, Vinyals, and Le
-- Goodfellow et al.'s "Generative Adversarial Nets"
-- Vaswani et al.'s "Attention Is All You Need"
-- "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding" by Devlin et al.
+- ["Sequence to Sequence Learning with Neural Networks" by Sutskever, Vinyals, and Le](/assets/papers/NIPS-2014-sequence-to-sequence-learning-with-neural-networks-Paper.pdf)
+- Goodfellow et al.'s ["Generative Adversarial Nets"](/assets/papers/1406.2661.pdf)
+- Vaswani et al.'s ["Attention Is All You Need"](/assets/papers/NIPS-2017-attention-is-all-you-need-Paper.pdf)
+- ["BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding" by Devlin et al.](/assets/papers/N19-1423.pdf)
 
 ### **Keeping Up with Current Trends**
 
