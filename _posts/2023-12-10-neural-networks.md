@@ -1,5 +1,5 @@
 ---
-Title: My Journey Through Neural Network Research
+title: My Journey Through Neural Network Research
 category: research
 tag: [study]
 ---
