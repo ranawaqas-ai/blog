@@ -9,7 +9,7 @@ tag: [tutorial]
 Making sure of failover and load balancing mechanism in company products.
 
 ### Diagram
-![Diagram Image](URL_to_diagram_image)
+![Diagram Image](/assets/img/nginx.svg)
 
 ## Installation
 Installing it on Ubuntu is just running this command:
@@ -143,4 +143,4 @@ We will do the following things:
 
 - Testing SOAP services on Nginx.
 - Building a high availability cluster using KeepAlived or Heartbeat.
-```
+
