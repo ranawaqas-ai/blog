@@ -16,10 +16,9 @@ timezone: Asia/Karachi
 
 title: Rana Waqas # the main title
 
-tagline: A Machine Learning, And AI Enthusiast # it will display as the sub-title
+tagline: A Machine Learning Journey, To AGI # it will display as the sub-title
 
-description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+description: Join me, Rana Waqas, on my journey towards Artificial General Intelligence. Explore my thoughts, research, and insights into the world of machine learning.
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -30,7 +29,7 @@ github:
 
 twitter:
   username: waqas137 # change to your twitter username
-
+  card: summary_large_image # [summary_large_image|summary]
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer

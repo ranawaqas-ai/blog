@@ -7,6 +7,11 @@ date: 2023-12-10 3:23 AM
 
 ![Journey](https://i.imgur.com/Wvh3Yhs.png)
 
+
+
+[Link to PDF](/assets/papers/rosenblatt1958.pdf)
+
+
 As an engineer I am deeply fascinated by Artificial General Intelligence (AGI), I've spent countless hours navigating the complex and ever-evolving landscape of neural networks. Through my journey, I've come to realize the importance of a structured approach to studying this field. Here, I want to share a roadmap that I've found incredibly useful for understanding the rich history, foundational concepts, and cutting-edge advancements in neural networks.
 
 In future I will be sharing my review of the following papers. 
