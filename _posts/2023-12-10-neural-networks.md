@@ -1,7 +1,7 @@
 ---
 title: My Journey Through Neural Network Research
-category: research
-tag: [study]
+category: Research and Development
+tag: [neural-network]
 ---
 
 
