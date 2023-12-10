@@ -1,5 +1,5 @@
 ---
-Title: My Journey Through Neural Network Research: A Roadmap for Aspiring AI Enthusiasts
+Title: My Journey Through Neural Network Research
 category: research
 tag: [study]
 ---
