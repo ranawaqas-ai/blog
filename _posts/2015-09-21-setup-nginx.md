@@ -1,4 +1,3 @@
-
 ---
 title:  "How to Setup Nginx"
 categories: tech
