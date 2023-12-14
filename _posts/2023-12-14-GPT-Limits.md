@@ -9,6 +9,7 @@ tag: [AI, CHATGPT]
 
 ### **DALL·E Responds:**
 *Asking for more details about the "complex thing".*  
+
 ![Image 1](/assets/img/1.png)
 
 </details>
