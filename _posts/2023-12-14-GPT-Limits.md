@@ -1,6 +1,6 @@
 ---
-category: crm
-tag: [ms-dynamics, crm]
+category: GPT
+tag: [AI, CHATGPT]
 ---
 
 
