@@ -1,12 +1,13 @@
 ---
+title: Testing GPT Philosophical  Limits
 category: GPT
 tag: [AI, CHATGPT]
 ---
 
-# Conversation Transcript
+## Conversation Transcript with DALL·E
 
 **Rana:** Draw a complex thing.
-**DALL·E:** Response asking for more details about the "complex thin).
+**DALL·E:** Response asking for more details about the "complex thing".
 ![Image 1](/assets/img/gpt-testing/1.png)
 
 **Rana:** Just draw, don't ask.
