@@ -3,7 +3,7 @@ category: GPT
 tag: [AI, CHATGPT]
 ---
 
-# **Conversation Transcript**
+# Conversation Transcript
 
 <details>
 <summary><b>User:</b> Draw a complex thing.</summary>
