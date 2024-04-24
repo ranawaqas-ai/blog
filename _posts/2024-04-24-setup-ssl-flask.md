@@ -1,8 +1,9 @@
 ---
 title:  "Setting up SSL for Flask APP"
 categories: AI
-tag: LLM, OLLAMA, AI
+tag: SSl, FLASK, tutorial
 ---
+![SSL](/assets/img/ssl-flask.png)
 
 ### **Setting Up SSL on Your Subdomain with Nginx and a Simple Python Flask Example**
 
