@@ -5,6 +5,23 @@ tag: [google,playstore]
 
 # My Google Support Odyssey: A Tale of Tech Support Terror and the Unexpected Pitfalls of Family Plans
 
+## Table of Contents
+- [My Google Support Odyssey: A Tale of Tech Support Terror and the Unexpected Pitfalls of Family Plans](#my-google-support-odyssey-a-tale-of-tech-support-terror-and-the-unexpected-pitfalls-of-family-plans)
+  - [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+  - [The Scene of the Crime:](#the-scene-of-the-crime)
+  - [The Never-Ending Story:](#the-never-ending-story)
+  - [Nancy to the Rescue (Maybe?):](#nancy-to-the-rescue-maybe)
+  - [Screenshot City:](#screenshot-city)
+  - [The Plot Twist:](#the-plot-twist)
+  - [The Grand Finale:](#the-grand-finale)
+  - [The Moral of the Story:](#the-moral-of-the-story)
+  - [Chat Transcript for Case: 5-4909000036946](#chat-transcript-for-case-5-4909000036946)
+    - [Thanks for Contacting Support](#thanks-for-contacting-support)
+      - [Chat Transcript for Case: 5-4909000036946](#chat-transcript-for-case-5-4909000036946-1)
+
+# Introduction
+
 Okay, people, grab your snacks and settle in because I'm about to tell you a story about the most ridiculous tech support experience of my life.  This isn't just any old "my internet was down" story, no sir. This is a saga of epic proportions, a tale of frustration, confusion, and the unexpected pitfalls of having a Google account.
 
 ## The Scene of the Crime:
@@ -50,9 +67,7 @@ After what felt like a lifetime (okay, it was an hour and a half, but still), I 
 
 So, the next time you're battling with tech support, remember my story. Take a deep breath, arm yourself with screenshots, and maybe, just maybe, you'll emerge victorious.
 
-The actual conversation below - TL;DR
-
-<summary>Chat Transcript for Case: 5-4909000036946</summary>
+## Chat Transcript for Case: 5-4909000036946
 
 ### Thanks for Contacting Support
 
