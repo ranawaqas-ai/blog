@@ -50,10 +50,10 @@ After what felt like a lifetime (okay, it was an hour and a half, but still), I 
 
 So, the next time you're battling with tech support, remember my story. Take a deep breath, arm yourself with screenshots, and maybe, just maybe, you'll emerge victorious.
 
+The actual conversation below - TL;DR
 
 <details>
 <summary>Chat Transcript for Case: 5-4909000036946</summary>
-
 
 ### Thanks for Contacting Support
 
@@ -594,10 +594,5 @@ I tried closing the Turkish payment profile, but it asked me to cancel all my su
 **Waqas Rana:** Thank you.  
 *Waqas Rana ended the conversation.*
 
----
-
-<div style="background-color: #F6F6F6; width: 99%; font-family: Arial, sans-serif; color: #777777; margin: 20px 0px; padding: 15px; border-radius: 5px;">
-  © 2022 Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043
-</div>
 
 </details>
