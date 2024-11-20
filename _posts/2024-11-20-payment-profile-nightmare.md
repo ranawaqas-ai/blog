@@ -52,7 +52,6 @@ So, the next time you're battling with tech support, remember my story. Take a d
 
 The actual conversation below - TL;DR
 
-<details>
 <summary>Chat Transcript for Case: 5-4909000036946</summary>
 
 ### Thanks for Contacting Support
@@ -593,6 +592,3 @@ I tried closing the Turkish payment profile, but it asked me to cancel all my su
 **Waqas Rana:** I think I am good for now 😄  
 **Waqas Rana:** Thank you.  
 *Waqas Rana ended the conversation.*
-
-
-</details>
