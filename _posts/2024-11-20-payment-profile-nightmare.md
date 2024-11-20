@@ -1,5 +1,5 @@
 ---
-category: crm
+category: blog
 tag: [google,playstore]
 ---
 
