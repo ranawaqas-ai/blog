@@ -48,11 +48,11 @@ We’ll build a fun little app that Dareen will love — a cookie recipe manager
 ### 🗂 Folder Structure
 
 ```
-/cookie-recipes
-├── static
-│   └── index.html
-├── app.py
-└── requirements.txt
+/cookie-recipes          # Root directory for your app
+├── static               # Contains frontend HTML and JS files
+│   └── index.html       # Main UI page for submitting and viewing recipes
+├── app.py               # The Flask backend that handles logic and data
+└── requirements.txt     # List of Python dependencies (Flask)
 ```
 
 ---
@@ -61,12 +61,14 @@ We’ll build a fun little app that Dareen will love — a cookie recipe manager
 
 ```html
 <!-- static/index.html -->
+<!-- UI for the Cookie Recipe Manager -->
 <h1>🍪 Cookie Recipe Manager</h1>
 <input type="text" id="recipe" placeholder="Enter your cookie recipe name">
 <button onclick="submitRecipe()">Save Recipe</button>
 <ul id="recipeList"></ul>
 
 <script>
+  // Function to submit a new recipe to the backend
   async function submitRecipe() {
     const recipe = document.getElementById("recipe").value;
     await fetch('/add', {
@@ -74,9 +76,10 @@ We’ll build a fun little app that Dareen will love — a cookie recipe manager
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({ recipe })
     });
-    loadRecipes();
+    loadRecipes(); // Refresh the list after adding
   }
 
+  // Function to load and display all recipes from the backend
   async function loadRecipes() {
     const res = await fetch('/list');
     const recipes = await res.json();
@@ -84,6 +87,7 @@ We’ll build a fun little app that Dareen will love — a cookie recipe manager
       recipes.map(r => `<li>${r}</li>`).join('');
   }
 
+  // Load recipes when the page first loads
   loadRecipes();
 </script>
 ```html
@@ -120,51 +124,35 @@ We’ll build a fun little app that Dareen will love — a cookie recipe manager
 ### 🧠 Step 2: Backend (`app.py`)
 
 ```python
-# app.py
 from flask import Flask, request, jsonify, send_from_directory
 
 app = Flask(__name__)
 
-# Simple in-memory storage
 cookie_recipes = []
+guestbook = []
 
 @app.route('/')
 def index():
     return send_from_directory('static', 'index.html')
 
-@app.route('/add', methods=['POST'])
-def add():
+@app.route('/cookie/add', methods=['POST'])
+def add_cookie():
     data = request.get_json()
     cookie_recipes.append(data['recipe'])
     return '', 200
 
-@app.route('/list')
-def list_recipes():
+@app.route('/cookie/list')
+def list_cookies():
     return jsonify(cookie_recipes)
 
-if __name__ == '__main__':
-    app.run(debug=True)
-
-# app.py
-from flask import Flask, request, jsonify, send_from_directory
-
-app = Flask(__name__)
-
-# Simple in-memory storage
-guestbook = []
-
-@app.route('/')
-def index():
-    return send_from_directory('static', 'guestbook.html')
-
-@app.route('/add', methods=['POST'])
-def add():
+@app.route('/guestbook/add', methods=['POST'])
+def add_guest():
     data = request.get_json()
     guestbook.append(data['name'])
     return '', 200
 
-@app.route('/list')
-def list_names():
+@app.route('/guestbook/list')
+def list_guests():
     return jsonify(guestbook)
 
 if __name__ == '__main__':
