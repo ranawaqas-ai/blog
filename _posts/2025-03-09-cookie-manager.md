@@ -33,8 +33,7 @@ Now let’s map this analogy to actual components:
 
 Here’s how a request flows in a web app:
 
-![Strategy](/assets/img/dareen/webdev.gif)
-
+<img src="/assets/img/dareen/webdev.gif" alt="Strategy" width="500" height="300">
 
 
 ---
