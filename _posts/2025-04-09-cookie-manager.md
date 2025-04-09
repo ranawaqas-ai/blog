@@ -3,7 +3,6 @@ category: blog
 tag: [tutorial,webdev]
 ---
 
-# 🌐 Understanding Web Development from First Principles
 
 Hey Dareen! If you're curious about how web development works — from what shows up in your browser to the code that powers it and where the data lives — you're in the perfect place.
 
@@ -34,7 +33,6 @@ Now let’s map this analogy to actual components:
 Here’s how a request flows in a web app:
 
 <img src="/assets/img/dareen/webdev.gif" alt="Strategy" width="500" height="300">
-
 
 ---
 
@@ -194,9 +192,11 @@ pip install -r requirements.txt
 1. Save all files according to the folder structure.
 2. Open terminal and navigate to the `guestbook-app` folder.
 3. Run:
+
    ```bash
    python app.py
    ```
+
 4. Open your browser and go to `http://127.0.0.1:5000`
 
 ---
