@@ -144,7 +144,7 @@ def list_recipes():
 
 if __name__ == '__main__':
     app.run(debug=True)
-```python
+
 # app.py
 from flask import Flask, request, jsonify, send_from_directory
 
