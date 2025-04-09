@@ -91,13 +91,14 @@ comments:
   # Giscus options › https://giscus.app
   giscus:
     repo: waqaskhan137/ranawaqas
-    repo_id: R_kgDOKUWy0Q
+    repo_id: R_kgDOK3YJYQ
     category: Announcements
-    category_id: DIC_kwDOKUWy0c4Cd01p
+    category_id: DIC_kwDOK3YJYc4Cbn4P
     mapping: pathname
     input_position: bottom
     lang: en
     reactions_enabled: 1
+    crossorigin: anonymous
 
 # Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
 assets:
