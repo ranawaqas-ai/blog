@@ -14,11 +14,6 @@ post_class: post-template
 
         {% if page.author %}
         <div class="post-top-meta d-flex align-items-center mt-3 mb-3">
-          {% if author.avatar %}
-          <img class="author-thumb mr-3" src="{{ site.baseurl }}/{{ author.avatar }}" alt="{{ author.display_name }}">
-          {% else %}
-          <img class="author-thumb mr-3" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
-          {% endif %}
           <div>
             <span class="link-dark font-weight-bold">{{ author.display_name }}</span>
             {% if author.twitter %}<a target="_blank" href="{{ author.twitter }}" class="btn follow ml-2">Follow</a>{% endif %}
