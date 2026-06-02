@@ -899,3 +899,18 @@ iframe {
     opacity: 0;
     transition: opacity .25s;
 }
+/* Medium-style share bar */
+.post-share-bar {
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+.share-btn {
+  color: #999;
+  font-size: 1.1rem;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+.share-btn:hover {
+  color: #333;
+  text-decoration: none;
+}

@@ -4,77 +4,96 @@ post_class: post-template
 ---
 
 <div class="container">
-  <div class="row">
-
-    <!-- Share sidebar -->
-    <div class="col-md-2 pl-0">
-      {% include share.html %}
-    </div>
-
-    <!-- Post -->
+  <div class="row justify-content-center">
     {% assign author = site.authors[page.author] %}
-    <div class="col-md-9 flex-first flex-md-unordered">
+    <div class="col-md-10 col-lg-8">
+
+      <!-- Author + meta -->
       <div class="mainheading">
+        <h1 class="posttitle">{{ page.title }}</h1>
 
         {% if page.author %}
-        <div class="row post-top-meta">
-          <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
-            {% if author.avatar %}
-            <img class="author-thumb" src="{{ site.baseurl }}/{{ author.avatar }}" alt="{{ author.display_name }}">
-            {% else %}
-            <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
-            {% endif %}
-          </div>
-          <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
-            <span class="link-dark">{{ author.display_name }}</span>
-            {% if author.twitter %}<a target="_blank" href="{{ author.twitter }}" class="btn follow">Follow</a>{% endif %}
-            <span class="author-description">{{ author.description }}</span>
+        <div class="post-top-meta d-flex align-items-center mt-3 mb-3">
+          {% if author.avatar %}
+          <img class="author-thumb mr-3" src="{{ site.baseurl }}/{{ author.avatar }}" alt="{{ author.display_name }}">
+          {% else %}
+          <img class="author-thumb mr-3" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
+          {% endif %}
+          <div>
+            <span class="link-dark font-weight-bold">{{ author.display_name }}</span>
+            {% if author.twitter %}<a target="_blank" href="{{ author.twitter }}" class="btn follow ml-2">Follow</a>{% endif %}
+            <div class="text-muted small mt-1">
+              <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+              {% if page.last_modified_at %} &middot; Updated {{ page.last_modified_at | date: "%b %-d, %Y" }}{% endif %}
+            </div>
           </div>
         </div>
         {% endif %}
-
-        <h1 class="posttitle">{{ page.title }}</h1>
-
       </div>
 
+      <!-- Medium-style share bar -->
+      <div class="post-share-bar d-flex align-items-center justify-content-between py-2 mb-4">
+        <div class="share-actions d-flex align-items-center">
+          <a class="share-btn mr-3" target="_blank"
+            href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url }}"
+            onclick="window.open(this.href,'twitter-share','width=550,height=235');return false;"
+            title="Share on Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a class="share-btn mr-3" target="_blank"
+            href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}&title={{ page.title | url_encode }}"
+            onclick="window.open(this.href,'linkedin-share','width=550,height=435');return false;"
+            title="Share on LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a class="share-btn mr-3" target="_blank"
+            href="https://facebook.com/sharer.php?u={{ page.url | absolute_url }}"
+            onclick="window.open(this.href,'facebook-share','width=550,height=435');return false;"
+            title="Share on Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+        {% if page.comments != false and site.giscus.repo %}
+        <a class="share-btn" href="#giscus-comments" title="Jump to comments">
+          <i class="far fa-comment"></i>
+        </a>
+        {% endif %}
+      </div>
+
+      <!-- Featured image -->
       {% if page.image %}
-      <img class="featured-image img-fluid" src="{% if page.image contains '://' %}{{ page.image }}{% else %}{{ site.baseurl }}/{{ page.image }}{% endif %}" alt="{{ page.title }}">
+      <img class="featured-image img-fluid mb-4" src="{% if page.image contains '://' %}{{ page.image }}{% else %}{{ site.baseurl }}/{{ page.image }}{% endif %}" alt="{{ page.title }}">
       {% endif %}
 
+      <!-- Content -->
       <div class="article-post">
         {% if page.toc %}
-          <div class="toc mt-4 mb-4 lead">
-            <h3 class="font-weight-bold">Contents</h3>
-            {% include toc.html html=content %}
-          </div>
+        <div class="toc mt-4 mb-4 lead">
+          <h3 class="font-weight-bold">Contents</h3>
+          {% include toc.html html=content %}
+        </div>
         {% endif %}
         {{ content }}
       </div>
 
-      <p><small>
-        <span class="post-date"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date_to_string }}</time></span>
-        {% if page.last_modified_at %}
-        (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
-        {% endif %}
-      </small></p>
-
-      <div class="after-post-cats">
-        <ul class="tags mb-4">
+      <!-- Tags & categories -->
+      <div class="after-post-cats mt-4">
+        <ul class="tags mb-2">
           {% for category in page.categories %}
-          <li><a class="smoothscroll" href="{{ site.baseurl }}/categories#{{ category | replace: ' ', '-' }}">{{ category }}</a></li>
+          <li><a href="{{ site.baseurl }}/categories#{{ category | replace: ' ', '-' }}">{{ category }}</a></li>
           {% endfor %}
         </ul>
       </div>
-
       <div class="after-post-tags">
-        <ul class="tags">
+        <ul class="tags mb-4">
           {% for tag in page.tags %}
-          <li><a class="smoothscroll" href="{{ site.baseurl }}/tags#{{ tag | replace: ' ', '-' }}">#{{ tag }}</a></li>
+          <li><a href="{{ site.baseurl }}/tags#{{ tag | replace: ' ', '-' }}">#{{ tag }}</a></li>
           {% endfor %}
         </ul>
       </div>
 
-      <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+      <!-- Prev / Next -->
+      <div class="row PageNavigation d-flex justify-content-between font-weight-bold mt-4">
         {% if page.previous.url %}<a class="prev d-block col-md-6" href="{{ site.baseurl }}{{ page.previous.url }}">&laquo; {{ page.previous.title }}</a>{% endif %}
         {% if page.next.url %}<a class="next d-block col-md-6 text-lg-right" href="{{ site.baseurl }}{{ page.next.url }}">{{ page.next.title }} &raquo;</a>{% endif %}
         <div class="clearfix"></div>
@@ -87,7 +106,7 @@ post_class: post-template
 {% if page.comments != false and site.giscus.repo %}
 <div class="container" id="giscus-comments">
   <div class="row justify-content-center mb-5">
-    <div class="col-md-8">
+    <div class="col-md-10 col-lg-8">
       {% include giscus.html %}
     </div>
   </div>
