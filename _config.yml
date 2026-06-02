@@ -32,7 +32,8 @@ kramdown:
     css_class: 'highlight'
 
 sass:
-  style: :compressed
+  style: compressed
+  sass_dir: _sass
 
 plugins:
   - jekyll-sitemap
