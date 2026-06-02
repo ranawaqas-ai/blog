@@ -65,10 +65,12 @@
 <div class="site-content">
 <div class="container">
 
+{% unless page.layout == 'post' or page.layout == 'page' %}
 <div class="mainheading">
   <h1 class="sitetitle">{{ site.name }}</h1>
   <p class="lead">{{ site.description }}</p>
 </div>
+{% endunless %}
 
 <div class="main-content">
   {{ content }}
