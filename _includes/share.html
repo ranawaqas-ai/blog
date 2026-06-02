@@ -22,12 +22,11 @@
         </li>
 
     </ul>
-    {% if page.comments != false %}
-    <div class="sep">
-    </div>
+    {% if page.comments != false and site.giscus.repo %}
+    <div class="sep"></div>
     <ul>
         <li>
-        <a class="small smoothscroll" href="#disqus_thread"></a>
+        <a class="small smoothscroll" href="#giscus-comments"><i class="far fa-comment"></i></a>
         </li>
     </ul>
     {% endif %}

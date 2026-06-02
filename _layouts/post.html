@@ -85,7 +85,7 @@ post_class: post-template
 </div>
 
 {% if page.comments != false and site.giscus.repo %}
-<div class="container">
+<div class="container" id="giscus-comments">
   <div class="row justify-content-center mb-5">
     <div class="col-md-8">
       {% include giscus.html %}
