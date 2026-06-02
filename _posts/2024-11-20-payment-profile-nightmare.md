@@ -1,4 +1,5 @@
 ---
+title: "Payment Profile Nightmare"
 category: blog
 tag: [google,playstore]
 ---

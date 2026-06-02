@@ -1,4 +1,5 @@
 ---
+title: "CRM 2013 Actions Are My New Favorite Feature"
 category: crm
 tag: [ms-dynamics, crm]
 ---

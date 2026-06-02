@@ -1,4 +1,5 @@
 ---
+title: "Gmail Automation"
 category: automation
 tag: [gmail]
 ---

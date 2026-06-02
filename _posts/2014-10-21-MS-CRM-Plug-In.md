@@ -1,4 +1,5 @@
 ---
+title: "MS CRM Plug-In"
 category: crm
 tag: [ms-dynamics, crm]
 ---

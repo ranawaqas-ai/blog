@@ -1,4 +1,5 @@
 ---
+title: "MS CRM Logging"
 category: crm
 tag: [ms-dynamics, crm]
 ---

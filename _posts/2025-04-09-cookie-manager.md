@@ -1,4 +1,5 @@
 ---
+title: "Cookie Recipe Manager Tutorial"
 category: blog
 tag: [tutorial,webdev]
 ---
