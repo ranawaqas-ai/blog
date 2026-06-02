@@ -1,27 +1,19 @@
-# Site
 name: "Rana Waqas"
-title: "Rana Waqas"
+author: "Rana Waqas"
 description: "A Machine Learning Journey, To AGI"
-logo: 'assets/images/logo.png'
-favicon: 'assets/images/favicon.ico'
+
 url: "https://blog.waqasrana.space"
 baseurl: ""
-permalink: /posts/:title/
 
-google_analytics: 'G-ERD23968FK'
+footer-links:
+  github: waqaskhan137
+  twitter: waqas137
+  linkedin: ranamuhammadwaqas
+  email: waqaskhan137@gmail.com
+  rss: rss
 
-# Authors
-authors:
-  waqas:
-    name: waqas
-    display_name: Rana Waqas
-    avatar: 'assets/images/avatar.png'
-    email: waqaskhan137@gmail.com
-    web: https://github.com/waqaskhan137
-    twitter: https://twitter.com/waqas137
-    description: "Machine learning engineer on a journey towards AGI. Writing about ML, MLOps, and software engineering."
+google_analytics_ga4: G-ERD23968FK
 
-# Giscus comments
 giscus:
   repo: waqaskhan137/ranawaqas
   repo_id: R_kgDOK3YJYQ
@@ -30,53 +22,32 @@ giscus:
   mapping: pathname
   reactions_enabled: 1
   input_position: bottom
-  lang: en
 
-# Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-archives
+permalink: /posts/:title/
 
-# Archives
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
-  layout: archive
-  permalinks:
-    category: '/category/:name/'
-    tag: '/tag/:name/'
-
-# Pagination
-paginate: 8
-paginate_path: /page:num/
-
-# Pages
-include: ["_pages"]
-
-# Markdown
-markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
   syntax_highlighter_opts:
-    block:
-      line_numbers: true
+    css_class: 'highlight'
 
-# Defaults
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
-      author: waqas
-      comments: true
+sass:
+  style: :compressed
 
-# Lazy Images
-lazyimages: "disabled"
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
 
-exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock, vendor]
+include: ['_pages']
+
+paginate: 8
+paginate_path: /page:num/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - vendor
