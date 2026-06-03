@@ -32,8 +32,8 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 740px;
-  padding: 0 10px;
+  max-width: 900px;
+  padding: 0 20px;
   width: 100%;
 }
 
@@ -224,14 +224,6 @@ p > img {
   margin: 0 auto;
 }
 
-/* Images in posts: natural size, never wider than the column */
-.post p > img, .detailed p > img {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  margin: 1.5em auto;
-}
 
 // Fixes images in popup boxes from Google Translate
 .gmnoprint img {
