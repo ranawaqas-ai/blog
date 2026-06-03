@@ -15,7 +15,8 @@
 - `url: "https://blog.waqasrana.space"` — critical for asset paths
 
 ## Git Tags (rollback points)
-- `chirpy-v7-stable` — Chirpy v7.5, current production theme
+- `chirpy-v7-with-diagrams` — Chirpy v7.5 + D2 diagrams working + tabs removed (latest stable)
+- `chirpy-v7-stable` — Chirpy v7.5, before diagrams
 - `mediumish-stable` — Mediumish theme (abandoned)
 
 ## Diagram Pipeline
@@ -30,11 +31,17 @@
 - SSH key: `~/.ssh/id_ed25519_personal` (added to GitHub via `gh ssh-key add`)
 - `gh` CLI authenticated as `waqaskhan137` via HTTPS token
 
+## Chirpy Theme Customisation Pattern
+- To suppress any Chirpy widget, create an empty override at the same path in the repo: e.g. `_includes/trending-tags.html` (empty file) hides the Trending Tags panel
+- To remove sidebar tabs: delete the corresponding `_tabs/<name>.md` file
+- Current overrides: `_includes/trending-tags.html` (empty — hides trending tags panel)
+- Tabs removed: categories, tags, archives — only Home and About remain
+
 ## Known Issues & Fixes Applied
 - D2 SVGs rendered at 0px height without the CI post-processing width/height injection
-- Chirpy PWA service worker caches aggressively — hard refresh (`Cmd+Shift+R`) clears it
+- D2 CI fix: check `width=` in the captured root `<svg>` tag, NOT `content[:300]` — child elements have `width=` too and cause the check to silently skip
+- Chirpy PWA service worker caches aggressively — `Cmd+Shift+R` may not be enough; use DevTools → Application → Service Workers → Unregister, then reload
 - Chirpy requires Ruby ~> 3.1; local system Ruby is 2.6 — use rbenv 3.2.0 for local builds
-- `sass_dir`/`load_paths` config needed for jekyll-sass-converter v3 (Reverie era, no longer relevant)
 
 ## Post Front Matter Notes
 - Old posts use `category:` (singular) and `tag:` (singular) — Jekyll maps these to `page.categories`/`page.tags` so Chirpy templates work fine
