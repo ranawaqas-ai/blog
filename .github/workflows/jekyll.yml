@@ -51,12 +51,13 @@ jobs:
             python3 - "$out" <<'PYEOF'
           import re, sys
           content = open(sys.argv[1]).read()
-          m = re.search(r'viewBox="(\d+) (\d+) (\d+) (\d+)"', content)
-          if m and 'width="' not in content[:300]:
-              w, h = m.group(3), m.group(4)
+          svg_tag = re.search(r'<svg\b[^>]*>', content)
+          vb = re.search(r'viewBox="0 0 (\d+) (\d+)"', content)
+          if svg_tag and vb and 'width=' not in svg_tag.group(0):
+              w, h = vb.group(1), vb.group(2)
               content = content.replace('<svg ', f'<svg width="{w}" height="{h}" ', 1)
               open(sys.argv[1], 'w').write(content)
-              print(f"Fixed dimensions {w}x{h}: {sys.argv[1]}")
+              print(f"Fixed {w}x{h}: {sys.argv[1]}")
           PYEOF
           done
       - name: Setup Pages
