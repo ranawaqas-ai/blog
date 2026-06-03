@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 820" width="500">
+  <defs>
+    <!-- Grid pattern -->
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#ccccc0" stroke-width="0.5"/>
+    </pattern>
+    <!-- Arrowhead pointing down/forward -->
+    <marker id="arr" markerWidth="7" markerHeight="6" refX="6" refY="3" orient="auto">
+      <polygon points="0 0, 7 3, 0 6" fill="#8b1a1a"/>
+    </marker>
+    <!-- Arrowhead pointing up/back -->
+    <marker id="arr-rev" markerWidth="7" markerHeight="6" refX="1" refY="3" orient="auto-start-reverse">
+      <polygon points="0 0, 7 3, 0 6" fill="#8b1a1a"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="820" fill="#f7f6f0"/>
+  <rect width="500" height="820" fill="url(#grid)"/>
+
+  <!-- ── BROWSER WINDOW ── -->
+  <!-- Tab -->
+  <rect x="40" y="30" width="170" height="34" rx="4" fill="#eedfa0" stroke="#b0b898" stroke-width="1.2"/>
+  <!-- File icon in tab -->
+  <rect x="52" y="40" width="9" height="12" rx="1" fill="none" stroke="#777" stroke-width="1.2"/>
+  <polyline points="58,40 58,37 61,37" fill="none" stroke="#777" stroke-width="1.2"/>
+  <text x="68" y="52" font-family="Arial, sans-serif" font-size="14" fill="#444">cookie</text>
+  <!-- Window controls (top-right circles) -->
+  <circle cx="390" cy="47" r="12" fill="none" stroke="#9aaa80" stroke-width="1.5"/>
+  <circle cx="420" cy="47" r="12" fill="none" stroke="#9aaa80" stroke-width="1.5"/>
+  <circle cx="450" cy="47" r="12" fill="none" stroke="#9aaa80" stroke-width="1.5"/>
+
+  <!-- Browser body -->
+  <rect x="40" y="64" width="420" height="128" rx="3" fill="#eedfa0" stroke="#b0b898" stroke-width="1.5"/>
+
+  <!-- Nav buttons -->
+  <!-- Back -->
+  <text x="58" y="140" font-family="Arial" font-size="26" fill="#a0a888">←</text>
+  <!-- Forward -->
+  <text x="92" y="140" font-family="Arial" font-size="26" fill="#a0a888">→</text>
+  <!-- Refresh (circle arrow) -->
+  <path d="M 138,118 a14,14 0 1,1 -14,14" fill="none" stroke="#a0a888" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="122,132 128,124 134,133" fill="#a0a888"/>
+
+  <!-- URL bar -->
+  <rect x="165" y="113" width="270" height="36" rx="4" fill="#f5eedc" stroke="#b0b898" stroke-width="1"/>
+  <!-- URL icon -->
+  <rect x="176" y="121" width="10" height="13" rx="1" fill="none" stroke="#999" stroke-width="1.2"/>
+  <polyline points="182,121 182,119 184,119" fill="none" stroke="#999" stroke-width="1.2"/>
+  <text x="196" y="136" font-family="Arial, sans-serif" font-size="14" fill="#555">cookie-manager.com</text>
+
+  <!-- ── ARROW: Browser ↕ Frontend ── -->
+  <line x1="248" y1="195" x2="248" y2="290" stroke="#8b1a1a" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+  <line x1="256" y1="290" x2="256" y2="195" stroke="#8b1a1a" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+
+  <!-- ── FRONTEND BOX ── -->
+  <rect x="60" y="295" width="380" height="58" rx="3" fill="#f5e6c4" stroke="#3a7a78" stroke-width="2.5"/>
+  <text x="250" y="330" font-family="Arial, sans-serif" font-size="17" font-weight="normal" fill="#333" text-anchor="middle">Frontend: HTML/CSS/JS</text>
+
+  <!-- ── DIAGONAL ARROWS: Frontend ↕ Backend ── -->
+  <!-- Request Backend (left side, going down) -->
+  <path d="M 195,353 C 175,410 160,460 190,510" fill="none" stroke="#8b1a1a" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+  <text x="52" y="420" font-family="Arial, sans-serif" font-size="13" fill="#555">Request</text>
+  <text x="52" y="437" font-family="Arial, sans-serif" font-size="13" fill="#555">Backend</text>
+
+  <!-- Frontend Updates UI (right side, going up) -->
+  <path d="M 332,510 C 355,460 360,410 325,353" fill="none" stroke="#8b1a1a" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+  <text x="358" y="415" font-family="Arial, sans-serif" font-size="13" fill="#555">Frontend</text>
+  <text x="358" y="432" font-family="Arial, sans-serif" font-size="13" fill="#555">Updates</text>
+  <text x="358" y="449" font-family="Arial, sans-serif" font-size="13" fill="#555">UI</text>
+
+  <!-- ── BACKEND BOX ── -->
+  <rect x="95" y="515" width="310" height="58" rx="3" fill="#f5e6c4" stroke="#3a7a78" stroke-width="2.5"/>
+  <text x="250" y="550" font-family="Arial, sans-serif" font-size="17" font-weight="normal" fill="#333" text-anchor="middle">Backend: Python</text>
+
+  <!-- ── ARROW: Backend ↕ Database ── -->
+  <line x1="246" y1="576" x2="246" y2="660" stroke="#8b1a1a" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+  <line x1="254" y1="660" x2="254" y2="576" stroke="#8b1a1a" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+
+  <!-- ── DATABASE CYLINDER ── -->
+  <!-- Body -->
+  <rect x="130" y="672" width="240" height="105" fill="#f5e6c4" stroke="#3a7a78" stroke-width="2"/>
+  <!-- Top ellipse -->
+  <ellipse cx="250" cy="672" rx="120" ry="22" fill="#f5e6c4" stroke="#3a7a78" stroke-width="2"/>
+  <!-- Bottom ellipse -->
+  <ellipse cx="250" cy="777" rx="120" ry="22" fill="#f0dcb8" stroke="#3a7a78" stroke-width="2"/>
+  <!-- Inner lines on cylinder (depth lines) -->
+  <line x1="130" y1="700" x2="370" y2="700" stroke="#3a7a78" stroke-width="1" opacity="0.3"/>
+  <line x1="130" y1="720" x2="370" y2="720" stroke="#3a7a78" stroke-width="1" opacity="0.3"/>
+  <text x="250" y="736" font-family="Arial, sans-serif" font-size="17" fill="#333" text-anchor="middle">Database</text>
+</svg>
