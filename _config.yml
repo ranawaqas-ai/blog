@@ -25,6 +25,13 @@ giscus:
 
 permalink: /posts/:title/
 
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
 kramdown:
   input: GFM
   syntax_highlighter: rouge
