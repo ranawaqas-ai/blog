@@ -59,6 +59,21 @@
 
 **fail2ban on Chirpy's sidebar** — 6 icons overflow onto two rows because the default gap + dot separator fill the 260px sidebar. Fix is in `custom.css` Section E: hide `.icon-border` and reduce `margin-right` to `0.5rem`.
 
+## Color Alignment with Portfolio
+
+The portfolio's canonical color tokens and their blog equivalents in `assets/css/custom.css`:
+
+| Token | Portfolio value | Blog CSS var | Notes |
+|---|---|---|---|
+| Light background | `#fafaf9` | `--main-bg`, `--card-bg` | Must set both — `--card-bg` defaults to `#ffffff` |
+| Light text | `#111111` | `--text-color`, `--post-list-text-color` | Chirpy default is `#34343c` |
+| Dark background | `#111111` | `--main-bg` | Cards stay `#1a1a1a` intentionally (depth) |
+| Dark text | `#f8f7f5` (warm near-white) | `--text-color`, `--post-list-text-color` | Chirpy default is `#afafb1` (gray) — biggest mismatch |
+| Light accent | `#0f766e` | `--link-color`, `--toc-highlight`, `--sidebar-active-color` | ✓ aligned |
+| Dark accent | `#2dd4bf` | `--link-color`, `--toc-highlight`, `--sidebar-active-color` | ✓ aligned |
+
+**Key gotcha**: `--card-bg` and `--text-color` are NOT overridden by default — always set them explicitly or Chirpy's defaults drift from the portfolio palette. All four blocks of the four-way cascade must include them.
+
 ## Known Issues & Fixes Applied
 - D2 SVGs rendered at 0px height without the CI post-processing width/height injection
 - D2 CI fix: check `width=` in the captured root `<svg>` tag, NOT `content[:300]` — child elements have `width=` too and cause the check to silently skip
