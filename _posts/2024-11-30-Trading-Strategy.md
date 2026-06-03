@@ -1,4 +1,5 @@
 ---
+published: false
 title: "Trading Strategy"
 category: blog
 tag: [trading, AI]
