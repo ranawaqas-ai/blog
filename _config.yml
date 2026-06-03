@@ -1,29 +1,71 @@
-name: "Rana Waqas"
-author: "Rana Waqas"
-description: "A Machine Learning Journey, To AGI"
+# The Site Configuration
+theme: jekyll-theme-chirpy
+
+lang: en
+timezone: Asia/Karachi
+
+title: Rana Waqas
+tagline: A Machine Learning Journey, To AGI
+description: Join me, Rana Waqas, on my journey towards Artificial General Intelligence. Explore my thoughts, research, and insights into the world of machine learning.
 
 url: "https://blog.waqasrana.space"
 baseurl: ""
 
-footer-links:
-  github: waqaskhan137
-  twitter: waqas137
-  linkedin: ranamuhammadwaqas
+github:
+  username: waqaskhan137
+twitter:
+  username: waqas137
+  card: summary_large_image
+social:
+  name: Rana Waqas
   email: waqaskhan137@gmail.com
-  rss: rss
+  links:
+    - https://twitter.com/waqas137
+    - https://github.com/waqaskhan137
+    - https://www.linkedin.com/in/ranamuhammadwaqas
 
-google_analytics_ga4: G-ERD23968FK
+analytics:
+  google:
+    id: G-ERD23968FK
 
-giscus:
-  repo: waqaskhan137/ranawaqas
-  repo_id: R_kgDOK3YJYQ
-  category: Announcements
-  category_id: DIC_kwDOK3YJYc4Cbn4P
-  mapping: pathname
-  reactions_enabled: 1
-  input_position: bottom
+theme_mode: # [light|dark] — empty follows system preference
 
-permalink: /posts/:title/
+cdn:
+avatar: /assets/img/profile.png
+toc: true
+
+comments:
+  provider: giscus
+  giscus:
+    repo: waqaskhan137/ranawaqas
+    repo_id: R_kgDOK3YJYQ
+    category: Announcements
+    category_id: DIC_kwDOK3YJYc4Cbn4P
+    mapping: pathname
+    input_position: bottom
+    lang: en
+    reactions_enabled: 1
+    crossorigin: anonymous
+
+pwa:
+  enabled: true
+
+paginate: 10
+
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
 
 defaults:
   - scope:
@@ -31,32 +73,54 @@ defaults:
       type: posts
     values:
       layout: post
-
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    css_class: 'highlight'
+      comments: true
+      toc: true
+      permalink: /posts/:title/
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+  - scope:
+      path: assets/img/favicons
+    values:
+      swcache: true
+  - scope:
+      path: assets/js/dist
+    values:
+      swcache: true
 
 sass:
   style: compressed
-  load_paths:
-    - _sass
 
-plugins:
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-paginate
-
-include: ['_pages']
-
-paginate: 8
-paginate_path: /page:num/
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
 
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
   - README.md
+  - LICENSE
   - vendor
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
