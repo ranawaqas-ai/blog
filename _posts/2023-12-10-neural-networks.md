@@ -1,4 +1,5 @@
 ---
+published: false
 title: My Journey Through Neural Network Research
 category: Research and Development
 tag: [neural-network]

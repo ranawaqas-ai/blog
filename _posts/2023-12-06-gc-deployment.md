@@ -1,4 +1,5 @@
 ---
+published: false
 title:  "Hosting a Ghost Blog on Google Cloud"
 categories: google-cloud
 tag: [tutorial]

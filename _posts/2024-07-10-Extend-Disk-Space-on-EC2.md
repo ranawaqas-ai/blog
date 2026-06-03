@@ -1,4 +1,5 @@
 ---
+published: false
 title: How to Extend Disk Space on an EC2 Instance
 category: aws
 tag: [aws, ec2, disk, tutorial]

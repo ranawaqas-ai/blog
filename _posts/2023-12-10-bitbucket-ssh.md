@@ -1,4 +1,5 @@
 ---
+published: false
 title: Configure Bitbucket SSH
 category: vpn
 tag: [opensource]

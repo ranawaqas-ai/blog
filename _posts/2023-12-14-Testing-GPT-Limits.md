@@ -1,4 +1,5 @@
 ---
+published: false
 title: Testing GPT Philosophical  Limits
 category: GPT
 tag: [AI, CHATGPT]
