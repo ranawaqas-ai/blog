@@ -4,28 +4,22 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-I'm **Rana M Waqas**, a seasoned **Software Engineering Leader** with a passion for developing innovative solutions in fintech and monitoring systems. My journey in the tech world began over seven years ago, and since then, I have been actively involved in various projects that focus on artificial intelligence, system efficiency, and user experience.
+I'm **Rana M Waqas**, an AI and software engineering leader. I build
+production AI systems — currently leading Data & AI at Ekho, where I built a
+Voice AI platform on Python, FastAPI, LiveKit and the OpenAI APIs, plus a B2B
+data operations platform.
 
-## My Work
+Before Ekho I led AI engineering at The Hexaa and spent six years at Afiniti
+building monitoring and contact-center systems at scale. I hold an MSc in
+Generative AI from the University of Exeter and a BSc in Software Engineering
+from the University of Bradford.
 
-- **aiDetect:** Developed an AI-powered event management system, enhancing SLA response times significantly.
-- **Afiniti Watch:** Spearheaded the creation of a centralized monitoring system, optimizing operational efficiency.
-- **ExpertFlow Solutions:** Pioneered full-stack solutions in Cisco Contact Centers, improving customer-agent interactions.
+This blog is where I write about what I'm building: LLMs, Voice and
+Conversational AI, and the engineering behind shipping them.
 
-## My Philosophy
+## Get in touch
 
-> "Technology is best when it brings people together." - Matt Mullenweg
-
-I believe in leveraging technology to not only solve complex problems but also to make a meaningful impact on people's lives. My approach combines technical expertise with a deep understanding of user needs, ensuring that every project I undertake is both innovative and practical.
-
-## Get In Touch
-
-Interested in collaborating or learning more about my work? Feel free to reach out!
-
+- **LinkedIn:** [ranamuhammadwaqas](https://www.linkedin.com/in/ranamuhammadwaqas/)
+- **GitHub:** [waqaskhan137](https://github.com/waqaskhan137)
 - **Email:** [waqaskhan137@gmail.com](mailto:waqaskhan137@gmail.com)
-- **Phone:** 0905369569614
-
-I'm always open to discussing new projects, technology trends, or potential opportunities.
-
-*Let's connect and create something amazing together.*
-
+- **Book a call:** [Calendly](https://calendly.com/waqaskhan137/one-on-one-session)
