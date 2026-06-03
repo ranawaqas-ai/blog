@@ -37,6 +37,28 @@
 - Current overrides: `_includes/trending-tags.html` (empty — hides trending tags panel)
 - Tabs removed: categories, tags, archives — only Home and About remain
 
+## Chirpy CSS Override Gotchas
+
+**Specificity trap — CSS variables.** Chirpy defines color variables inside `html[data-mode='light'|'dark']` selectors nested inside `@media (prefers-color-scheme)` blocks — specificity `(0,1,1)`. A plain `:root {}` override at `(0,1,0)` always loses. All color overrides in `assets/css/custom.css` must mirror the four-way cascade:
+```css
+@media (prefers-color-scheme: light) {
+  html:not([data-mode]), html[data-mode='light'] { /* light vars */ }
+  html[data-mode='dark'] { /* dark vars */ }
+}
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode]), html[data-mode='dark'] { /* dark vars */ }
+  html[data-mode='light'] { /* light vars */ }
+}
+```
+
+**`%link-hover` is hardcoded, not a variable.** Chirpy compiles `color: #d2603a !important` directly into CSS for hover states on links. Override by replicating the full compiled selector list with your color + `!important` in `custom.css`, loaded after the theme CSS.
+
+**Font families are hardcoded in SCSS, not CSS variables.** Override with direct CSS property rules (e.g. `body { font-family: ... }`), not variable overrides.
+
+**`metadata-hook.html`** is Chirpy's designated empty `<head>` injection point — shadow it at `_includes/metadata-hook.html` to add fonts and custom CSS without forking the gem.
+
+**fail2ban on Chirpy's sidebar** — 6 icons overflow onto two rows because the default gap + dot separator fill the 260px sidebar. Fix is in `custom.css` Section E: hide `.icon-border` and reduce `margin-right` to `0.5rem`.
+
 ## Known Issues & Fixes Applied
 - D2 SVGs rendered at 0px height without the CI post-processing width/height injection
 - D2 CI fix: check `width=` in the captured root `<svg>` tag, NOT `content[:300]` — child elements have `width=` too and cause the check to silently skip
