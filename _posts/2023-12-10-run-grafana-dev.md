@@ -1,4 +1,5 @@
 ---
+published: false
 title: Run Grafana in Dev Mod
 category: vpn
 tag: [opensource]

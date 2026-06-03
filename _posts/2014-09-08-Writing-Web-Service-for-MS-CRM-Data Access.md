@@ -1,4 +1,5 @@
 ---
+published: false
 title: "Writing a Web Service for MS CRM Data Access"
 category: crm
 tag: [ms-dynamics, crm]

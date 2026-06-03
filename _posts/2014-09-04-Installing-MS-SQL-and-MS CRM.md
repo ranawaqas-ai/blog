@@ -1,4 +1,5 @@
 ---
+published: false
 title: "Installing MS SQL and MS CRM"
 category: crm
 tag: [ms-dynamics, crm]

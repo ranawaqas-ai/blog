@@ -1,4 +1,5 @@
 ---
+published: false
 title: "Generating XRM.cs"
 category: crm
 tag: [ms-dynamics, crm]
