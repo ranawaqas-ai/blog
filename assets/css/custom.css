@@ -195,3 +195,22 @@ kbd,
   background-color: rgb(15 118 110 / 25%);
   color: inherit;
 }
+
+/* ---------------------------------------------------------------
+   SECTION E: Sidebar bottom — keep all 6 icons on one row
+   The default 0.8rem gap + dot separator overflows the 260px
+   sidebar with 5 contact icons + mode toggle. Fix: hide the dot
+   and tighten the gap so everything fits on a single row.
+   --------------------------------------------------------------- */
+
+#sidebar .sidebar-bottom .icon-border {
+  display: none;
+}
+
+#sidebar .sidebar-bottom a:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+#sidebar .sidebar-bottom #mode-toggle {
+  margin-right: 0.5rem;
+}
