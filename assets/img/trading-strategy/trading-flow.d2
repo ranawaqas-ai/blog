@@ -1,0 +1,40 @@
+direction: right
+
+signals: Strategy Signals {
+  ss1: SS1
+  ss2: SS2
+  ss3: SS3
+  ss4: SS4
+  ss5: SS5
+  ssn: SS .. N
+}
+
+de: Decision Engine {
+  eval: Evaluation Rules
+  memory: Memory Management
+  ai: AI Model {
+    shape: rectangle
+  }
+  ai -> eval
+  ai -> memory
+}
+
+exec: Trade Execution Module
+observer: Trade Observer
+dynamic: "Dynamic Trade\nprofit/loss analysis"
+binance: Binance
+
+signals.ss1 -> de.ai
+signals.ss2 -> de.ai
+signals.ss3 -> de.ai
+signals.ss4 -> de.ai
+signals.ss5 -> de.ai
+signals.ssn -> de.ai
+
+de.ai -> exec
+de.ai -> observer
+de.ai -> dynamic: Re-adjust the strategy
+
+observer -> dynamic
+exec -> binance
+observer -> binance

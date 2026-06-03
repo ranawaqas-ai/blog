@@ -40,6 +40,14 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
           cache-version: 2
+      - name: Install D2
+        run: curl -fsSL https://d2lang.com/install.sh | sh -s --
+      - name: Compile D2 diagrams to SVG
+        run: |
+          find . -name "*.d2" | while read f; do
+            d2 --sketch --theme 0 "$f" "${f%.d2}.svg"
+            echo "Compiled: $f"
+          done
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v6

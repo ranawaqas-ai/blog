@@ -40,20 +40,7 @@ Now let’s map this analogy to actual components:
 
 Here’s how a request flows in a web app:
 
-```mermaid
-graph TD
-    Browser["🌐 cookie-manager.com"]
-    Frontend["Frontend: HTML/CSS/JS"]
-    Backend["Backend: Python"]
-    Database[("Database")]
-
-    Browser -->|"HTTP Request"| Frontend
-    Frontend -->|"Response"| Browser
-    Frontend -->|"Request Backend"| Backend
-    Backend -->|"Frontend Updates UI"| Frontend
-    Backend -->|"Query"| Database
-    Database -->|"Response"| Backend
-```
+<img src="/assets/img/dareen/webdev-flow.svg" alt="Web App Flow" style="max-width:100%;height:auto;display:block;margin:0 auto;">
 
 ---
 

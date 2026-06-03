@@ -1,0 +1,15 @@
+direction: down
+
+browser: "cookie-manager.com (Browser)"
+frontend: Frontend: HTML/CSS/JS
+backend: Backend: Python
+database: Database {
+  shape: cylinder
+}
+
+browser -> frontend: HTTP Request
+frontend -> browser: Response
+frontend -> backend: Request Backend
+backend -> frontend: Frontend Updates UI
+backend -> database: Query
+database -> backend: Response
