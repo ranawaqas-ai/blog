@@ -40,7 +40,7 @@ Now let’s map this analogy to actual components:
 
 Here’s how a request flows in a web app:
 
-<img src="/assets/img/dareen/webdev-flow.svg" alt="Web App Flow" style="max-width:30%;height:auto;display:block;margin:0 auto;">
+<img src="/assets/img/dareen/webdev-flow.svg" alt="Web App Flow" style="max-width:45%;height:auto;display:block;margin:0 auto;">
 
 ---
 
