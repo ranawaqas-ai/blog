@@ -1,5 +1,20 @@
 # Blog: blog.waqasrana.space
 
+## Owner context
+
+Full background on Rana Waqas is in `../context/` (one level up). Read these before writing posts, updating the About page, or making brand decisions:
+
+- `../context/linkedin-profile.md` — complete career history, tech stacks, certifications, education
+- `../context/exeter-msc-generative-ai.md` — full MSc GenAI programme: module codes, descriptions, assessments, learning outcomes
+- `../context/university-directory-index.md` — dissertation structure (LLM hallucination/metacognition), experiments, supervisor, findings to date
+- `../context/dev-directory-index.md` — index of all projects across Ekho, The-Hexaa, Hyly, Fikar.ai, and personal repos by domain
+
+**Current blog state (as of 2026-06-03):** 3 posts published (`local-llm`, `Gmail-automation`, `cookie-manager`). 23 posts archived (`published: false`) — stale, off-brand, or PII risk. About page rewritten to reflect current AI/ML positioning.
+
+## Writing style rules
+
+- **No em dashes.** Rana dislikes em dashes (—). Never use them in posts, the About page, or any blog content. Use a colon, comma, or split into a new sentence instead.
+
 ## Stack
 - **Theme**: Chirpy v7.5 (jekyll-theme-chirpy gem)
 - **Ruby**: 3.4 (CI), local debug uses rbenv 3.2.0
