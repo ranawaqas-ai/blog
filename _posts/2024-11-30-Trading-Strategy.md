@@ -4,5 +4,5 @@ category: blog
 tag: [trading, AI]
 ---
 
-![Strategy](/assets/img/trading-strategy/diga.gif)
+<img src="/assets/img/trading-strategy/trading-flow.svg" alt="Trading Strategy Architecture" style="max-width:100%;height:auto;display:block;margin:0 auto;">
 

@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 640" width="1100">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#ccccc0" stroke-width="0.5"/>
+    </pattern>
+    <marker id="arr" markerWidth="7" markerHeight="6" refX="6" refY="3" orient="auto">
+      <polygon points="0 0, 7 3, 0 6" fill="#8b1a1a"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="640" fill="#f7f6f0"/>
+  <rect width="1100" height="640" fill="url(#grid)"/>
+
+  <!-- ── SS SIGNALS PANEL ── -->
+  <rect x="15" y="30" width="128" height="530" rx="12" fill="#eee0b5" stroke="#3a7a78" stroke-width="2"/>
+  <rect x="33" y="68"  width="68" height="30" rx="5" fill="#f5e6c4" stroke="#3a7a78" stroke-width="1.5"/>
+  <text x="67" y="88"  font-family="Arial,sans-serif" font-size="13" fill="#333" text-anchor="middle">SS1</text>
+  <rect x="33" y="113" width="68" height="30" rx="5" fill="#f5e6c4" stroke="#3a7a78" stroke-width="1.5"/>
+  <text x="67" y="133" font-family="Arial,sans-serif" font-size="13" fill="#333" text-anchor="middle">SS2</text>
+  <rect x="33" y="158" width="68" height="30" rx="5" fill="#f5e6c4" stroke="#3a7a78" stroke-width="1.5"/>
+  <text x="67" y="178" font-family="Arial,sans-serif" font-size="13" fill="#333" text-anchor="middle">SS3</text>
+  <rect x="33" y="203" width="68" height="30" rx="5" fill="#f5e6c4" stroke="#3a7a78" stroke-width="1.5"/>
+  <text x="67" y="223" font-family="Arial,sans-serif" font-size="13" fill="#333" text-anchor="middle">SS4</text>
+  <rect x="33" y="248" width="68" height="30" rx="5" fill="#f5e6c4" stroke="#3a7a78" stroke-width="1.5"/>
+  <text x="67" y="268" font-family="Arial,sans-serif" font-size="13" fill="#333" text-anchor="middle">SS5</text>
+  <text x="67" y="310" font-family="Arial,sans-serif" font-size="22" fill="#888" text-anchor="middle">·</text>
+  <text x="67" y="328" font-family="Arial,sans-serif" font-size="22" fill="#888" text-anchor="middle">·</text>
+  <text x="67" y="346" font-family="Arial,sans-serif" font-size="22" fill="#888" text-anchor="middle">·</text>
+  <rect x="33" y="362" width="68" height="30" rx="5" fill="#f5e6c4" stroke="#3a7a78" stroke-width="1.5"/>
+  <text x="67" y="382" font-family="Arial,sans-serif" font-size="12" fill="#333" text-anchor="middle">SS .. N</text>
+  <text x="17" y="576" font-family="Arial,sans-serif" font-size="11" fill="#555" font-style="italic">SS = Strategy Signal</text>
+
+  <!-- ── DECISION ENGINE OUTER PANEL ── -->
+  <rect x="216" y="40" width="322" height="540" rx="22" fill="#eee0b5" stroke="#3a7a78" stroke-width="2"/>
+
+  <!-- Evaluation Rules -->
+  <rect x="236" y="74" width="128" height="50" rx="8" fill="#f5e6c4" stroke="#3a7a78" stroke-width="1.5"/>
+  <text x="300" y="104" font-family="Arial,sans-serif" font-size="13" fill="#333" text-anchor="middle">Evaluation Rules</text>
+
+  <!-- Memory Management -->
+  <rect x="378" y="74" width="138" height="50" rx="8" fill="#f5e6c4" stroke="#3a7a78" stroke-width="1.5"/>
+  <text x="447" y="94"  font-family="Arial,sans-serif" font-size="13" fill="#333" text-anchor="middle">Memory</text>
+  <text x="447" y="112" font-family="Arial,sans-serif" font-size="13" fill="#333" text-anchor="middle">Management</text>
+
+  <!-- Inner AI Panel -->
+  <rect x="236" y="176" width="282" height="286" rx="15" fill="#e8d8a5" stroke="#3a7a78" stroke-width="2"/>
+  <text x="377" y="206" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">Decision Engine</text>
+
+  <!-- Brain icon at (377, 295) -->
+  <g transform="translate(377,292)" fill="none" stroke="#5a9a98" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-2,-34 C-12,-46 -52,-42 -48,-14 C-52,4 -44,32 -24,34 C-16,42 -2,38 -2,30"/>
+    <path d="M 2,-34 C 12,-46  52,-42  48,-14 C 52,4  44,32  24,34 C 16,42  2,38  2,30"/>
+    <line x1="0" y1="-34" x2="0" y2="30"/>
+    <path d="M-16,-18 C-34,-7 -34,9 -16,15"/>
+    <path d="M-38,19 C-27,25 -21,30 -32,34"/>
+    <path d="M 16,-18 C 34,-7  34,9  16,15"/>
+    <path d="M 38,19  C 27,25  21,30  32,34"/>
+    <path d="M-4,32 Q0,42 4,32"/>
+  </g>
+
+  <text x="377" y="406" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#333" text-anchor="middle">AI Model</text>
+
+  <!-- ── RIGHT MODULES ── -->
+  <!-- Trade Execution Module -->
+  <rect x="602" y="112" width="168" height="62" rx="8" fill="#f5e6c4" stroke="#3a7a78" stroke-width="1.5"/>
+  <text x="686" y="137" font-family="Arial,sans-serif" font-size="13" fill="#333" text-anchor="middle">Trade Execution</text>
+  <text x="686" y="155" font-family="Arial,sans-serif" font-size="13" fill="#333" text-anchor="middle">Module</text>
+
+  <!-- Trade Observer -->
+  <rect x="602" y="302" width="148" height="52" rx="8" fill="#f5e6c4" stroke="#3a7a78" stroke-width="1.5"/>
+  <text x="676" y="333" font-family="Arial,sans-serif" font-size="13" fill="#333" text-anchor="middle">Trade Observer</text>
+
+  <!-- Dynamic Trade profit/loss -->
+  <rect x="602" y="420" width="168" height="64" rx="8" fill="#f5e6c4" stroke="#3a7a78" stroke-width="1.5"/>
+  <text x="686" y="446" font-family="Arial,sans-serif" font-size="12" fill="#333" text-anchor="middle">Dynamic Trade</text>
+  <text x="686" y="463" font-family="Arial,sans-serif" font-size="12" fill="#333" text-anchor="middle">profit/loss analysis</text>
+
+  <!-- ── DASHED DIVIDER ── -->
+  <line x1="788" y1="28" x2="788" y2="608" stroke="#bbb" stroke-width="1.5" stroke-dasharray="7,5"/>
+
+  <!-- ── BINANCE PANEL ── -->
+  <rect x="806" y="116" width="134" height="292" rx="16" fill="#f5e6c4" stroke="#3a7a78" stroke-width="2"/>
+  <text x="873" y="270" font-family="Arial,sans-serif" font-size="15" fill="#333" text-anchor="middle">Binance</text>
+
+  <!-- ══ ARROWS ══ -->
+
+  <!-- SS1–SS5 + SS..N → Decision Engine inner panel (converge to left edge) -->
+  <line x1="101" y1="83"  x2="236" y2="296" stroke="#8b1a1a" stroke-width="1.7" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+  <line x1="101" y1="128" x2="236" y2="296" stroke="#8b1a1a" stroke-width="1.7" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+  <line x1="101" y1="173" x2="236" y2="296" stroke="#8b1a1a" stroke-width="1.7" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+  <line x1="101" y1="218" x2="236" y2="296" stroke="#8b1a1a" stroke-width="1.7" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+  <line x1="101" y1="263" x2="236" y2="296" stroke="#8b1a1a" stroke-width="1.7" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+  <line x1="101" y1="377" x2="236" y2="296" stroke="#8b1a1a" stroke-width="1.7" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+
+  <!-- AI → Evaluation Rules (up-left) -->
+  <path d="M 316,176 C 308,150 304,134 304,124" fill="none" stroke="#8b1a1a" stroke-width="1.7" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+
+  <!-- AI → Memory Management (up-right) -->
+  <path d="M 448,176 C 448,150 448,134 448,124" fill="none" stroke="#8b1a1a" stroke-width="1.7" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+
+  <!-- AI → Trade Execution Module -->
+  <path d="M 518,235 C 558,235 578,143 602,143" fill="none" stroke="#8b1a1a" stroke-width="1.7" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+
+  <!-- AI → Trade Observer -->
+  <path d="M 518,328 C 558,328 578,328 602,328" fill="none" stroke="#8b1a1a" stroke-width="1.7" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+
+  <!-- AI → Dynamic Trade (Re-adjust the strategy) -->
+  <path d="M 377,462 C 377,500 505,500 602,452" fill="none" stroke="#8b1a1a" stroke-width="1.7" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+  <text x="430" y="518" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#555">Re-adjust the strategy</text>
+
+  <!-- Trade Observer → Dynamic Trade (down) -->
+  <line x1="676" y1="354" x2="676" y2="420" stroke="#8b1a1a" stroke-width="1.7" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+
+  <!-- Trade Execution → Binance -->
+  <path d="M 770,143 C 790,143 790,225 806,225" fill="none" stroke="#8b1a1a" stroke-width="1.7" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+
+  <!-- Trade Observer → Binance -->
+  <path d="M 750,328 C 770,328 790,305 806,305" fill="none" stroke="#8b1a1a" stroke-width="1.7" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+</svg>
