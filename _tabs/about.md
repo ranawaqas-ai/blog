@@ -4,18 +4,22 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-I'm **Rana M Waqas**, an AI and software engineering leader. I build
-production AI systems — currently leading Data & AI at Ekho, where I built a
-Voice AI platform on Python, FastAPI, LiveKit and the OpenAI APIs, plus a B2B
-data operations platform.
+I'm **Rana M Waqas**. For over a decade I've built voice and conversational
+AI systems — from Cisco voice portals at Expertflow, through six years at
+Afiniti on the real-time call-routing AI that served Fortune 100
+financial-services and healthcare clients, to founding and leading the
+engineering team at Ekho, where I shipped an AI voice-simulation platform
+(Python, FastAPI, LiveKit, OpenAI) that trained 50+ sales reps and cut their
+onboarding by 30%.
 
-Before Ekho I led AI engineering at The Hexaa and spent six years at Afiniti
-building monitoring and contact-center systems at scale. I hold an MSc in
-Generative AI from the University of Exeter and a BSc in Software Engineering
-from the University of Bradford.
+I'm now completing an MSc in Generative AI at the University of Exeter. My
+dissertation asks whether LLMs have genuine metacognitive awareness of their
+own knowledge boundaries, or whether hallucination-detection methods are just
+exploiting surface-level signals — measuring how much of the detection
+"signal" is real.
 
-This blog is where I write about what I'm building: LLMs, Voice and
-Conversational AI, and the engineering behind shipping them.
+This blog is where I work through the engineering: local LLMs and RAG,
+voice AI, and the unglamorous parts of getting these systems to production.
 
 ## Get in touch
 
