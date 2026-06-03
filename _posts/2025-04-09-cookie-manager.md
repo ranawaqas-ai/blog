@@ -4,7 +4,7 @@ category: blog
 tag: [tutorial,webdev]
 ---
 
-Hey Dareen! If you're curious about how web development works — from what shows up in your browser to the code that powers it and where the data lives — you're in the perfect place.
+Hey Dareen! If you're curious about how web development works (from what shows up in your browser to the code that powers it and where the data lives), you're in the perfect place.
 
 
 **🚨 [Cookie Manager Repository](https://github.com/waqaskhan137/cookie-manager) 🚨**
@@ -22,9 +22,9 @@ We'll walk through everything from scratch using **first principles**, starting 
 
 A web application is like a digital restaurant:
 
-- **Frontend** is like the **recipe card** — it shows you what cookies you can bake and takes your selection.
-- **Backend** is the **kitchen** — it follows the recipe and does the actual mixing, baking, and magic.
-- **Database** is the **pantry** — it stores all your ingredients like sugar, flour, and chocolate chips.
+- **Frontend** is like the **recipe card**: it shows you what cookies you can bake and takes your selection.
+- **Backend** is the **kitchen**: it follows the recipe and does the actual mixing, baking, and magic.
+- **Database** is the **pantry**: it stores all your ingredients like sugar, flour, and chocolate chips.
 
 Now let’s map this analogy to actual components:
 
@@ -46,7 +46,7 @@ Here’s how a request flows in a web app:
 
 ## 📦 Let's Build a Simple Cookie Recipe Manager
 
-We’ll build a fun little app that Dareen will love — a cookie recipe manager! It will:
+We’ll build a fun little app that Dareen will love, a cookie recipe manager! It will:
 
 1. Let a user type in the name of a cookie recipe.
 2. Send that recipe name to the backend.
