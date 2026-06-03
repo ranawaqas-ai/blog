@@ -45,8 +45,19 @@ jobs:
       - name: Compile D2 diagrams to SVG
         run: |
           find . -name "*.d2" | while read f; do
-            d2 --sketch --theme 0 "$f" "${f%.d2}.svg"
-            echo "Compiled: $f"
+            out="${f%.d2}.svg"
+            d2 --sketch --theme 0 "$f" "$out"
+            # D2 omits width/height on root SVG — add them so <img height:auto> works
+            python3 - "$out" <<'PYEOF'
+          import re, sys
+          content = open(sys.argv[1]).read()
+          m = re.search(r'viewBox="(\d+) (\d+) (\d+) (\d+)"', content)
+          if m and 'width="' not in content[:300]:
+              w, h = m.group(3), m.group(4)
+              content = content.replace('<svg ', f'<svg width="{w}" height="{h}" ', 1)
+              open(sys.argv[1], 'w').write(content)
+              print(f"Fixed dimensions {w}x{h}: {sys.argv[1]}")
+          PYEOF
           done
       - name: Setup Pages
         id: pages
