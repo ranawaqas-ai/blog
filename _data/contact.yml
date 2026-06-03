@@ -13,6 +13,11 @@
 - type: rss
   icon: "fa-solid fa-rss"
   noblank: true
+
+- type: portfolio
+  icon: "fa-solid fa-house"
+  url: "https://waqasrana.space"
+  noblank: true
 # Uncomment and complete the url below to enable more contact options
 #
 # - type: mastodon

@@ -1,0 +1,197 @@
+/* =============================================================
+   Brand alignment: blog.waqasrana.space → waqasrana.space
+   Teal accent: #0f766e (light) / #2dd4bf (dark)
+   Warm backgrounds: #fafaf9 (light) / #111111 (dark)
+   Fonts: Charter (headings), DM Sans (body/UI), Fira Code (mono)
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   SECTION A: CSS variable overrides
+   Mirrors Chirpy's media-query + data-mode cascade (specificity 0,1,1).
+   Loaded after theme CSS via metadata-hook.html → wins by source order.
+   --------------------------------------------------------------- */
+
+@media (prefers-color-scheme: light) {
+  html:not([data-mode]),
+  html[data-mode='light'] {
+    --main-bg: #fafaf9;
+    --topbar-bg: rgb(250 250 249 / 70%);
+    --link-color: #0f766e;
+    --link-underline-color: rgb(15 118 110 / 30%);
+    --toc-highlight: #0f766e;
+    --checkbox-checked-color: #0f766e;
+    --btn-share-hover-color: #0f766e;
+    --sidebar-bg: #f2f5f4;
+    --sidebar-border-color: #e8ecea;
+    --sidebar-hover-bg: rgb(15 118 110 / 8%);
+    --sidebar-muted-color: #575757;
+    --sidebar-active-color: #0f766e;
+    --site-title-color: #555555;
+    --site-subtitle-color: #6b6b6b;
+    --tag-hover: rgb(15 118 110 / 12%);
+  }
+
+  html[data-mode='dark'] {
+    --main-bg: #111111;
+    --topbar-bg: rgb(17 17 17 / 64%);
+    --card-bg: #1a1a1a;
+    --card-header-bg: #242424;
+    --button-bg: #1a1a1a;
+    --btn-border-color: #2a2a2a;
+    --main-border-color: rgb(42 42 42);
+    --tb-odd-bg: #1e1e1e;
+    --tb-even-bg: #161616;
+    --link-color: #2dd4bf;
+    --link-underline-color: rgb(45 212 191 / 30%);
+    --toc-highlight: #2dd4bf;
+    --checkbox-checked-color: #2dd4bf;
+    --btn-share-hover-color: #2dd4bf;
+    --sidebar-bg: #161616;
+    --sidebar-border-color: #242424;
+    --sidebar-hover-bg: #1f1f1f;
+    --sidebar-btn-bg: #1c1c1c;
+    --sidebar-active-color: #2dd4bf;
+    --sidebar-muted-color: #868686;
+    --site-title-color: #888888;
+    --site-subtitle-color: #868686;
+    --tag-hover: rgb(45 212 191 / 12%);
+    --tag-border: rgb(45 212 191 / 25%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode]),
+  html[data-mode='dark'] {
+    --main-bg: #111111;
+    --topbar-bg: rgb(17 17 17 / 64%);
+    --card-bg: #1a1a1a;
+    --card-header-bg: #242424;
+    --button-bg: #1a1a1a;
+    --btn-border-color: #2a2a2a;
+    --main-border-color: rgb(42 42 42);
+    --tb-odd-bg: #1e1e1e;
+    --tb-even-bg: #161616;
+    --link-color: #2dd4bf;
+    --link-underline-color: rgb(45 212 191 / 30%);
+    --toc-highlight: #2dd4bf;
+    --checkbox-checked-color: #2dd4bf;
+    --btn-share-hover-color: #2dd4bf;
+    --sidebar-bg: #161616;
+    --sidebar-border-color: #242424;
+    --sidebar-hover-bg: #1f1f1f;
+    --sidebar-btn-bg: #1c1c1c;
+    --sidebar-active-color: #2dd4bf;
+    --sidebar-muted-color: #868686;
+    --site-title-color: #888888;
+    --site-subtitle-color: #868686;
+    --tag-hover: rgb(45 212 191 / 12%);
+    --tag-border: rgb(45 212 191 / 25%);
+  }
+
+  html[data-mode='light'] {
+    --main-bg: #fafaf9;
+    --topbar-bg: rgb(250 250 249 / 70%);
+    --link-color: #0f766e;
+    --link-underline-color: rgb(15 118 110 / 30%);
+    --toc-highlight: #0f766e;
+    --checkbox-checked-color: #0f766e;
+    --btn-share-hover-color: #0f766e;
+    --sidebar-bg: #f2f5f4;
+    --sidebar-border-color: #e8ecea;
+    --sidebar-hover-bg: rgb(15 118 110 / 8%);
+    --sidebar-muted-color: #575757;
+    --sidebar-active-color: #0f766e;
+    --site-title-color: #555555;
+    --site-subtitle-color: #6b6b6b;
+    --tag-hover: rgb(15 118 110 / 12%);
+  }
+}
+
+/* ---------------------------------------------------------------
+   SECTION B: Hardcoded hover color override
+   Chirpy's %link-hover compiles to color:#d2603a !important globally.
+   Override with teal — light mode default, dark mode via data-mode + media.
+   --------------------------------------------------------------- */
+
+#page-category a:hover,
+#page-tag a:hover,
+#access-lastmod a:hover,
+.post-tail-wrapper .license-wrapper > a:hover,
+#search-results a:hover,
+footer a:hover,
+#topbar #breadcrumb a:hover,
+.post-meta a:not([class]):hover,
+.content a:not(.img-link):hover {
+  color: #0f766e !important;
+  border-bottom-color: #0f766e !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode]) #page-category a:hover,
+  html:not([data-mode]) #page-tag a:hover,
+  html:not([data-mode]) #access-lastmod a:hover,
+  html:not([data-mode]) .post-tail-wrapper .license-wrapper > a:hover,
+  html:not([data-mode]) #search-results a:hover,
+  html:not([data-mode]) footer a:hover,
+  html:not([data-mode]) #topbar #breadcrumb a:hover,
+  html:not([data-mode]) .post-meta a:not([class]):hover,
+  html:not([data-mode]) .content a:not(.img-link):hover {
+    color: #2dd4bf !important;
+    border-bottom-color: #2dd4bf !important;
+  }
+}
+
+html[data-mode='dark'] #page-category a:hover,
+html[data-mode='dark'] #page-tag a:hover,
+html[data-mode='dark'] #access-lastmod a:hover,
+html[data-mode='dark'] .post-tail-wrapper .license-wrapper > a:hover,
+html[data-mode='dark'] #search-results a:hover,
+html[data-mode='dark'] footer a:hover,
+html[data-mode='dark'] #topbar #breadcrumb a:hover,
+html[data-mode='dark'] .post-meta a:not([class]):hover,
+html[data-mode='dark'] .content a:not(.img-link):hover {
+  color: #2dd4bf !important;
+  border-bottom-color: #2dd4bf !important;
+}
+
+/* ---------------------------------------------------------------
+   SECTION C: Font-family overrides
+   Chirpy hardcodes font names in SCSS vars (not CSS custom properties).
+   Charter is a system font on macOS/iOS — no web font load needed.
+   --------------------------------------------------------------- */
+
+body {
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+}
+
+header .post-desc,
+#toc-bar .label,
+#search-results a,
+h1, h2, h3, h4, h5 {
+  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  font-weight: 400;
+}
+
+code,
+pre,
+.highlight pre,
+.rouge-code pre {
+  font-family: 'Fira Code', Menlo, 'Courier New', monospace;
+}
+
+kbd,
+.tag span,
+.archive-list-header,
+#panel-wrapper .panel-heading,
+.toc-popup .panel-heading {
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+/* ---------------------------------------------------------------
+   SECTION D: Text selection highlight
+   --------------------------------------------------------------- */
+
+::selection {
+  background-color: rgb(15 118 110 / 25%);
+  color: inherit;
+}
