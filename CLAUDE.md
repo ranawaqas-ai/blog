@@ -15,6 +15,10 @@ Full background on Rana Waqas is in `../context/` (one level up). Read these bef
 
 - **No em dashes.** Rana dislikes em dashes (—). Never use them in posts, the About page, or any blog content. Use a colon, comma, or split into a new sentence instead.
 
+## Blog Post Queue
+
+`BLOG_QUEUE.md` holds upcoming post ideas, ranked and ready to pick up during free time. Each idea has a hook, target reader, biggest risk, and a bar it must clear. Includes an **academic-integrity guardrail** for dissertation-related posts (method/craft safe to publish now; specific thesis numbers held until after marking) and a list of parked/rejected ideas with reasons. Read it before drafting any new AI/research post. Update statuses (`queued` → `drafting` → `review` → `published`) as work progresses.
+
 ## Stack
 - **Theme**: Chirpy v7.5 (jekyll-theme-chirpy gem)
 - **Ruby**: 3.4 (CI), local debug uses rbenv 3.2.0
