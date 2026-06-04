@@ -261,4 +261,10 @@ html.reading-mode #panel-wrapper { display: none !important; }
   html.reading-mode #main-wrapper { margin-left: 0 !important; }
 }
 
-html.reading-mode #main-wrapper > .container { max-width: 48rem !important; }
+html.reading-mode #main-wrapper > .container { max-width: 54rem !important; }
+
+/* Larger, Medium-like reading size (matches the mdreview review view: ~20px / 1.7) */
+html.reading-mode .content {
+  font-size: 1.25rem !important;
+  line-height: 1.7 !important;
+}
