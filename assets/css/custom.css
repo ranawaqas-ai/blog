@@ -254,14 +254,23 @@ kbd,
    is already off-canvas there and the hamburger nav still works.
    --------------------------------------------------------------- */
 
-html.reading-mode #panel-wrapper { display: none !important; }
+html.reading-mode #panel-wrapper,
+html.reading-mode #search,
+html.reading-mode #search-trigger { display: none !important; }
 
 @media (min-width: 850px) {
   html.reading-mode #sidebar { display: none !important; }
   html.reading-mode #main-wrapper { margin-left: 0 !important; }
 }
 
-html.reading-mode #main-wrapper > .container { max-width: 54rem !important; }
+html.reading-mode #main-wrapper > .container { max-width: 60rem !important; }
+
+/* Chirpy caps the content column at 96% and adds wide-screen padding;
+   force it to full width so the reading measure actually widens. */
+html.reading-mode #main-wrapper > .container .col-lg-11 {
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+}
 
 /* Larger, Medium-like reading size (matches the mdreview review view: ~20px / 1.7) */
 html.reading-mode .content {
