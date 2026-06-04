@@ -191,6 +191,16 @@ h1, h2, h3, h4, h5 {
   font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
 }
 
+/* Mermaid diagrams (rendered by metadata-hook.html) */
+.content .mermaid {
+  text-align: center;
+  margin: 1.25rem 0;
+}
+.content .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
 code,
 pre,
 .highlight pre,
