@@ -263,7 +263,8 @@ html.reading-mode #search-trigger { display: none !important; }
    prefix Home with a left arrow. */
 html.reading-mode #breadcrumb span:last-child { display: none !important; }
 html.reading-mode #breadcrumb span:not(:last-child)::after { content: "" !important; padding: 0 !important; }
-html.reading-mode #breadcrumb a[href="/"]::before { content: "\2190"; margin-right: 0.4rem; }
+html.reading-mode #breadcrumb a[href="/"] { font-size: 0; }                       /* hide the "Home" text */
+html.reading-mode #breadcrumb a[href="/"]::before { content: "\2190"; font-size: 1.5rem; }  /* keep just the arrow */
 
 @media (min-width: 850px) {
   html.reading-mode #sidebar { display: none !important; }
