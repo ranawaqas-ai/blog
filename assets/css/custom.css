@@ -182,6 +182,15 @@ h1, h2, h3, h4, h5 {
   font-weight: 400;
 }
 
+/* Post reading text in Charter (the font from the mdreview view).
+   Scoped to article body only; site chrome (sidebar, nav, lists) stays DM Sans.
+   Code keeps Fira Code via its own rule below. */
+.content p,
+.content li,
+.content blockquote {
+  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+}
+
 code,
 pre,
 .highlight pre,
