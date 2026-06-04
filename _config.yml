@@ -5,8 +5,8 @@ lang: en
 timezone: Asia/Karachi
 
 title: Rana Waqas
-tagline: A Machine Learning Journey, To AGI
-description: Join me, Rana Waqas, on my journey towards Artificial General Intelligence. Explore my thoughts, research, and insights into the world of machine learning.
+tagline: AI Engineer · LLM Reliability
+description: "Rana Waqas, AI engineer and engineering leader. I build and ship AI products in industry, and I research the hard problems in LLMs: hallucination, metacognition, and model architecture. MSc Generative AI at the University of Exeter."
 
 url: "https://blog.waqasrana.space"
 baseurl: ""

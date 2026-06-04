@@ -9,7 +9,7 @@ tags: [intro]
 **Email:** waqaskhan137@gmail.com
 
 ## Summary
-Seasoned software engineering leader with over seven years of experience in fintech and monitoring solutions. Spearheaded the development of aiDetect, an AI-powered event management system that reduced SLAs from 15 minutes to 60 seconds and currently serves 80+ accounts. Also led the creation of Afiniti Watch, a centralized monitoring system that consolidated disparate data streams, reducing manual effort by over 30% and resource utilization by 50%, thereby increasing operational efficiency. Specialized in Java, Spring Boot, Microservices, SQL Databases, NoSQL Databases, and Data Management. Demonstrated ability to deliver high-quality software solutions, lead cross-functional teams, and integrate third-party services for scalable and efficient systems.
+AI engineer and engineering leader. Earlier in my career I spent over seven years building monitoring and automation systems for enterprise contact centers. I led the development of aiDetect, an event management and anomaly-detection system that reduced SLAs from 15 minutes to 60 seconds across 80+ accounts, and Afiniti Watch, a centralized monitoring system that consolidated disparate data streams and reduced manual effort by over 30% and resource utilization by 50%. Specialized in Java, Spring Boot, microservices, and data management, with a track record of delivering high-quality software, leading cross-functional teams, and integrating third-party services for scalable, efficient systems.
 
 ## Professional Experience
 
