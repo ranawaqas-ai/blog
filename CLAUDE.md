@@ -19,6 +19,12 @@ Full background on Rana Waqas is in `../context/` (one level up). Read these bef
 
 `BLOG_QUEUE.md` holds upcoming post ideas, ranked and ready to pick up during free time. Each idea has a hook, target reader, biggest risk, and a bar it must clear. Includes an **academic-integrity guardrail** for dissertation-related posts (method/craft safe to publish now; specific thesis numbers held until after marking) and a list of parked/rejected ideas with reasons. Read it before drafting any new AI/research post. Update statuses (`queued` → `drafting` → `review` → `published`) as work progresses.
 
+### Research workspace — `_research/` (local only, gitignored)
+
+`_research/` is the work-in-progress workshop for blog posts. **It is gitignored (never pushed) and excluded from the Jekyll build.** Because the blog repo is public, WIP that may reference unexamined thesis material stays off git entirely; only the sanitized final post graduates into `_posts/`. Read `_research/README.md` for the full per-post process (brief → sources → outline → draft → review gate → graduate). Each post folder's `brief.md` carries a per-post integrity checklist. Note: this dir is local-only, so it is not backed up by the repo.
+
+**Inline draft review:** human feedback on a draft uses `mdreview` (`~/Dev/personal/tools-utilities/mdreview/`), a standalone local tool. Run `mdreview _research/<slug>/draft.md`; it opens a browser reading view for inline annotation, streams notes to `draft.feedback.md` beside the draft, and live-reloads when the draft is edited. Feedback files stay inside the gitignored `_research/` folder.
+
 ## Stack
 - **Theme**: Chirpy v7.5 (jekyll-theme-chirpy gem)
 - **Ruby**: 3.4 (CI), local debug uses rbenv 3.2.0
@@ -42,7 +48,7 @@ Full background on Rana Waqas is in `../context/` (one level up). Read these bef
 - **D2** diagrams: `.d2` source files in `assets/img/`
 - CI compiles `.d2` → `.svg` with `d2 --sketch --theme 0`
 - Post-processing in CI injects `width`/`height` into root SVG (required for `<img>` rendering)
-- **Mermaid**: wired in `_layouts/default.html` via ES module CDN — use ` ```mermaid ` fenced blocks in any post
+- **Mermaid**: wired globally in `_includes/metadata-hook.html` (imports Mermaid v11 ESM from jsdelivr, converts `code.language-mermaid` blocks on load) — use ` ```mermaid ` fenced blocks in any post, no per-post `mermaid: true` needed. Chirpy has no `_layouts` override in this repo.
 - **D2 sources**: `assets/img/dareen/webdev-flow.d2`, `assets/img/trading-strategy/trading-flow.d2`
 
 ## SSH / Git Remote
@@ -125,4 +131,4 @@ graph TD
     A --> B
 ```
 ````
-No config needed — Mermaid v11 is loaded globally via default layout.
+No config needed — Mermaid v11 is loaded globally via `_includes/metadata-hook.html` (renders on page load; `quadrantChart`, flowcharts with subgraphs, and dotted edges all supported).
