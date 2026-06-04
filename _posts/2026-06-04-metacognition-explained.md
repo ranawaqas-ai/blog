@@ -25,7 +25,7 @@ quadrantChart
     quadrant-4 Tip of the tongue
 ```
 
-The two questions are independent axes: whether you actually know the thing, and whether you feel that you do. When they agree you are on the diagonal, solid knowledge in one corner and honest ignorance in the other. When they come apart you get the two failures the chart names, and the top-left one, confident error, is the dangerous one. Metacognition is the work of staying on the diagonal, and this whole post is about how easily we slip off it.
+They are independent axes: whether you actually know the thing, and whether you feel that you do. When they agree you are on the diagonal, solid knowledge in one corner and honest ignorance in the other. When they come apart you get the two failures the chart names, and the top-left one, confident error, is the dangerous one. Metacognition is the work of staying on the diagonal, and this whole post is about how easily we slip off it.
 
 ## The architecture: monitoring and control
 
