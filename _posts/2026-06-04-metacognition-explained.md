@@ -31,7 +31,7 @@ They are independent axes: whether you actually know the thing, and whether you 
 
 The most useful map anyone has drawn of this layer came from Thomas Nelson and Louis Narens in 1990, and it is worth reproducing, because most of the confusion around the topic clears up once you can see it.
 
-They split the mind into two levels. The **object-level** is the part of you doing the actual work: recalling the capital of France, adding two numbers, parsing this sentence. It is where thinking happens. It does not comment on itself, it just runs.
+They split the mind into two levels. The **object-level** does the actual work: recalling the capital of France, adding two numbers, parsing this sentence. It is where thinking happens. It does not comment on itself, it just runs.
 
 The **meta-level** sits one step back and keeps a running picture of how the object-level is doing. It is not solving the problem. It is watching the solving and forming an opinion about it: this is going well, I am stuck, I am not sure. If the object-level is a worker, the meta-level is the supervisor who never touches the task but always has a read on how it is going. In their framework that running picture has a name, a **model** of the object-level, and it is the hub everything else plugs into.
 
