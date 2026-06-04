@@ -258,6 +258,13 @@ html.reading-mode #panel-wrapper,
 html.reading-mode #search,
 html.reading-mode #search-trigger { display: none !important; }
 
+/* Breadcrumb becomes a simple back arrow to Home (the title below is the H1,
+   so the breadcrumb title is redundant). Drop the title span + separator,
+   prefix Home with a left arrow. */
+html.reading-mode #breadcrumb span:last-child { display: none !important; }
+html.reading-mode #breadcrumb span:not(:last-child)::after { content: "" !important; padding: 0 !important; }
+html.reading-mode #breadcrumb a[href="/"]::before { content: "\2190"; margin-right: 0.4rem; }
+
 @media (min-width: 850px) {
   html.reading-mode #sidebar { display: none !important; }
   html.reading-mode #main-wrapper { margin-left: 0 !important; }
