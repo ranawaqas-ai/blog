@@ -243,3 +243,22 @@ kbd,
 #sidebar .sidebar-bottom #mode-toggle {
   margin-right: 0.5rem;
 }
+
+/* ---------------------------------------------------------------
+   SECTION F: Reading mode (clean, distraction-free post pages)
+   `reading-mode` class is added to <html> on /posts/ pages by
+   _includes/metadata-hook.html. Hides the left sidebar (avatar, nav,
+   socials) and the right panel (search, recently updated, TOC), and
+   centers the article to a comfortable measure. The topbar breadcrumb
+   stays as back navigation. Mobile (<850px) is untouched: the sidebar
+   is already off-canvas there and the hamburger nav still works.
+   --------------------------------------------------------------- */
+
+html.reading-mode #panel-wrapper { display: none !important; }
+
+@media (min-width: 850px) {
+  html.reading-mode #sidebar { display: none !important; }
+  html.reading-mode #main-wrapper { margin-left: 0 !important; }
+}
+
+html.reading-mode #main-wrapper > .container { max-width: 48rem !important; }

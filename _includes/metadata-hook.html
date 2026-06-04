@@ -1,3 +1,7 @@
+<!-- Reading mode: flag individual post pages so custom.css can hide the side panels.
+     Set synchronously in <head> (before paint) to avoid any flash of the sidebar. -->
+<script>if(location.pathname.indexOf('/posts/')===0)document.documentElement.classList.add('reading-mode');</script>
+
 <!-- Brand alignment: DM Sans + Fira Code matching waqasrana.space -->
 <link rel="preload" as="style"
   href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap">
