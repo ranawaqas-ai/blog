@@ -18,5 +18,5 @@ package-lock.json
 .idea
 .vscode
 
-# Misc
-assets/js/dist
+# Blog research workspace (local only, never published, may hold unexamined thesis material)
+_research
