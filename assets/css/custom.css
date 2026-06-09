@@ -292,6 +292,3 @@ html.reading-mode .content {
 html.reading-mode .post-tail-wrapper,
 html.reading-mode #related-posts,
 html.reading-mode .post-navigation { display: none !important; }
-
-/* Hide the "Using the Chirpy theme for Jekyll" footer credit (keeps the copyright line) */
-footer p:has(a[href*="jekyll-theme-chirpy"]) { display: none; }

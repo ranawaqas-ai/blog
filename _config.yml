@@ -1,5 +1,12 @@
 # The Site Configuration
-theme: jekyll-theme-chirpy
+# Theme is vendored in this repo (ejected from jekyll-theme-chirpy 7.5.0).
+# The gem auto-required its plugin dependencies; now they must be listed here.
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-include-cache
 
 lang: en
 timezone: Asia/Karachi

@@ -14,6 +14,7 @@ Full background on Rana Waqas is in `../context/` (one level up). Read these bef
 ## Writing style rules
 
 - **No em dashes.** Rana dislikes em dashes (—). Never use them in posts, the About page, or any blog content. Use a colon, comma, or split into a new sentence instead.
+- **No emojis.** Anywhere in blog content: not in headings, not in prose, and not even inside code listings shown in a post (e.g. an app's own HTML strings). Plain text only.
 
 ## Blog Post Queue
 
@@ -26,7 +27,7 @@ Full background on Rana Waqas is in `../context/` (one level up). Read these bef
 **Inline draft review:** human feedback on a draft uses `mdreview` (`~/Dev/personal/tools-utilities/mdreview/`), a standalone local tool. Run `mdreview _research/<slug>/draft.md`; it opens a browser reading view for inline annotation, streams notes to `draft.feedback.md` beside the draft, and live-reloads when the draft is edited. Feedback files stay inside the gitignored `_research/` folder.
 
 ## Stack
-- **Theme**: Chirpy v7.5 (jekyll-theme-chirpy gem)
+- **Theme**: VENDORED fork of Chirpy 7.5.0, ejected from the gem on 2026-06-10 (tag `pre-theme-eject` is the last gem-based commit). All theme files (`_layouts`, `_includes`, `_sass`, `assets`, `_data/locales`, etc.) live in this repo and are edited directly; there is no theme gem. Chirpy's MIT license kept at `LICENSE-chirpy`. The former gem's plugin deps are now explicit in `Gemfile` and `plugins:` in `_config.yml` (the gem's auto-require is gone).
 - **Ruby**: 3.4 (CI), local debug uses rbenv 3.2.0
 - **CI**: GitHub Actions — `.github/workflows/jekyll.yml`
 - **Comments**: Giscus (waqaskhan137/ranawaqas, Announcements category)
@@ -40,6 +41,7 @@ Full background on Rana Waqas is in `../context/` (one level up). Read these bef
 - `url: "https://blog.waqasrana.space"` — critical for asset paths
 
 ## Git Tags (rollback points)
+- `pre-theme-eject` — last commit using the jekyll-theme-chirpy gem, before vendoring the theme into the repo
 - `chirpy-v7-with-diagrams` — Chirpy v7.5 + D2 diagrams working + tabs removed (latest stable)
 - `chirpy-v7-stable` — Chirpy v7.5, before diagrams
 - `mediumish-stable` — Mediumish theme (abandoned)
@@ -56,11 +58,11 @@ Full background on Rana Waqas is in `../context/` (one level up). Read these bef
 - SSH key: `~/.ssh/id_ed25519_personal` (added to GitHub via `gh ssh-key add`)
 - `gh` CLI authenticated as `waqaskhan137` via HTTPS token
 
-## Chirpy Theme Customisation Pattern
-- To suppress any Chirpy widget, create an empty override at the same path in the repo: e.g. `_includes/trending-tags.html` (empty file) hides the Trending Tags panel
-- To remove sidebar tabs: delete the corresponding `_tabs/<name>.md` file
-- Current overrides: `_includes/trending-tags.html` (empty — hides trending tags panel)
-- Tabs removed: categories, tags, archives — only Home and About remain
+## Theme Customisation (post-eject)
+- The theme is local now: edit `_layouts/`, `_includes/`, `_sass/`, `assets/` directly. The old "shadow the gem file" override pattern is obsolete (there is no gem to shadow); historical overrides like the empty `_includes/trending-tags.html` still work simply as the real files.
+- Prefer folding new styling into the theme SCSS over growing `assets/css/custom.css`; the 4-way cascade workarounds below predate the eject and can be migrated gradually.
+- `site.theme` is nil (no gem): `_includes/head.html` and `assets/js/data/swconf.js` hardcode `/assets/css/jekyll-theme-chirpy.css`; the footer credit was deleted from `_includes/footer.html`.
+- To remove sidebar tabs: delete the corresponding `_tabs/<name>.md` file. Tabs removed: categories, tags, archives — only Home and About remain.
 
 ## Chirpy CSS Override Gotchas
 
