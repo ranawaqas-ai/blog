@@ -132,3 +132,5 @@ graph TD
 ```
 ````
 No config needed — Mermaid v11 is loaded globally via `_includes/metadata-hook.html` (renders on page load; `quadrantChart`, flowcharts with subgraphs, and dotted edges all supported).
+
+**Gotcha — avoid `{{ }}` in Mermaid (Jekyll Liquid collision).** The Mermaid hexagon node shape `id{{"label"}}` contains `{{ }}`, which Jekyll's Liquid evaluates and strips, turning `S{{"mdreview service"}}` into `Smdreview service` and breaking the diagram with "Syntax error in text" (only on the built site, not in local mermaid previews like mdreview). Use a non-`{{` node shape (rectangle `["..."]`, rounded `("...")`, stadium `(["..."])`) or wrap the block in `{% raw %}...{% endraw %}`. Single braces (`{ }`, and the `%%{init: ...}%%` directive) are fine; only the `{{`/`}}` pair triggers Liquid.

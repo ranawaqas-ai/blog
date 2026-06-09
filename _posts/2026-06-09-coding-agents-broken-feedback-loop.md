@@ -43,7 +43,7 @@ Under those tools is a plain HTTP service, and the MCP server is a stateless wra
 %%{init: {'flowchart': {'rankSpacing': 95, 'nodeSpacing': 60, 'curve': 'basis'}}}%%
 flowchart TB
   A(["Agent"]):::agent
-  S{{"mdreview service"}}:::svc
+  S["mdreview service"]:::svc
   H(["Human"]):::human
 
   A -->|"submit"| S
