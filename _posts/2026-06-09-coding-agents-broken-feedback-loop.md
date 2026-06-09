@@ -77,7 +77,7 @@ This is now how I review the things my agents write, including this post. The dr
 
 It is built for trusted, local use. There is no auth: the dashboard and the review list show every review to anyone who can reach the port. That is fine on a laptop or a private network and a bad idea on the open internet, so if you expose it, put a reverse proxy with a token in front. Within that scope it does exactly one job and gets out of the way.
 
-The code lives at `tools-utilities/mdreview-service`. Running it is one line:
+The code is on GitHub: [waqaskhan137/mdreview-service](https://github.com/waqaskhan137/mdreview-service). Running it is one line:
 
 ```bash
 docker compose up -d --build   # serves on http://localhost:8137
