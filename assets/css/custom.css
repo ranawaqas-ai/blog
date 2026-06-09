@@ -285,3 +285,10 @@ html.reading-mode .content {
   font-size: 1.25rem !important;
   line-height: 1.7 !important;
 }
+
+/* Reading mode: drop the post-tail clutter (category/tag chips, license + share
+   row, "Further Reading", older/newer navigation). Giscus comments are also in
+   #tail-wrapper, so hide the specific sections rather than the whole container. */
+html.reading-mode .post-tail-wrapper,
+html.reading-mode #related-posts,
+html.reading-mode .post-navigation { display: none !important; }
