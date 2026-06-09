@@ -20,9 +20,8 @@ social:
   name: Rana Waqas
   email: waqaskhan137@gmail.com
   links:
-    - https://twitter.com/waqas137
-    - https://github.com/waqaskhan137
     - https://www.linkedin.com/in/ranamuhammadwaqas
+    - https://github.com/waqaskhan137
 
 analytics:
   google:
@@ -117,6 +116,8 @@ exclude:
   - README.md
   - LICENSE
   - vendor
+  - _research
+  - BLOG_QUEUE.md
 
 jekyll-archives:
   enabled: []
