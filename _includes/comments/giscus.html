@@ -36,6 +36,15 @@
     const $footer = document.querySelector('footer');
     $footer.insertAdjacentElement("beforebegin", giscusNode);
 
+    {%- assign linkedin = site.data.contact | where: 'type', 'linkedin' | first -%}
+    {%- if linkedin -%}
+    const fallbackNote = document.createElement('p');
+    fallbackNote.className = 'text-muted small';
+    fallbackNote.innerHTML =
+      'No GitHub account? Reach me on <a href="{{ linkedin.url }}" target="_blank" rel="noopener">LinkedIn</a>.';
+    $footer.insertAdjacentElement('beforebegin', fallbackNote);
+    {%- endif -%}
+
     addEventListener('message', (event) => {
       if (event.source === window && event.data && event.data.id === Theme.ID) {
         const newTheme = themeMapper[Theme.visualState];
