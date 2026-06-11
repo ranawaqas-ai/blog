@@ -43,7 +43,7 @@ toc: true
 comments:
   provider: giscus
   giscus:
-    repo: waqaskhan137/ranawaqas
+    repo: waqaskhan137/blog
     repo_id: R_kgDOK3YJYQ
     category: Announcements
     category_id: DIC_kwDOK3YJYc4Cbn4P
