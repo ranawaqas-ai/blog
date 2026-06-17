@@ -1,0 +1,43 @@
+direction: down
+
+dial: "More thinking:\nlonger chains, more compute" {
+  shape: rectangle
+  style.stroke: "#0f766e"
+}
+
+reason: "Object level: reasoning" {
+  shape: rectangle
+}
+
+monitor: "Meta level: monitoring\ndo I actually know this?" {
+  shape: rectangle
+  style.stroke-dash: 5
+  style.font-color: "#8a95a3"
+}
+
+answer: "A longer, more\nconfident answer" {
+  shape: rectangle
+}
+
+bluff: "Confident, still unchecked:\na more elaborate bluff" {
+  shape: page
+  style.stroke: "#E5736B"
+}
+
+dial -> reason: scales {
+  style.animated: true
+}
+reason -> answer {
+  style.animated: true
+}
+answer -> bluff {
+  style.animated: true
+}
+dial -> monitor: "does not build this" {
+  style.stroke: "#E5736B"
+  style.stroke-dash: 4
+}
+monitor -> answer: "the check that never runs" {
+  style.stroke-dash: 4
+  style.font-color: "#8a95a3"
+}

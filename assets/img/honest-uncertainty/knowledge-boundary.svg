@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 640" width="980" height="640" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E5736B"/></marker>
+    <marker id="ar-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a95a3"/></marker>
+    <marker id="ar-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f766e"/></marker>
+  </defs>
+  <circle cx="300" cy="340" r="205" fill="#f0fdfa" stroke="#0f766e" stroke-width="2.5"/>
+  <path d="M297.1,73.0 L297.8,135.0" fill="none" stroke="#0f766e" stroke-width="1.5" marker-end="url(#ar-teal)"/>
+  <g transform="translate(294,333)">
+    <text text-anchor="middle" font-weight="700" font-size="18" fill="#134e4a">What the model</text>
+    <text y="24" text-anchor="middle" font-weight="700" font-size="18" fill="#134e4a">knows</text>
+    <text y="46" text-anchor="middle" font-size="12" fill="#5f8f86">inside the boundary</text>
+  </g>
+  <path d="M494,291 L659.4,105.0" fill="none" stroke="#E5736B" stroke-width="2.5" marker-end="url(#ar-red)"/>
+  <g transform="translate(530,25)">
+    <rect width="330" height="80" rx="9" fill="#ffffff" stroke="#ecc7c4"/>
+    <line x1="7" y1="14" x2="7" y2="66" stroke="#E5736B" stroke-width="4" stroke-linecap="round"/>
+    <text x="22" y="28" font-weight="700" font-size="15" fill="#c4554d">Answer confidently</text>
+    <text x="22" y="48" font-size="12.5" fill="#5b6573">crosses the boundary: a confident error,</text>
+    <text x="22" y="64" font-size="12.5" fill="#5b6573">wrong, delivered as fact</text>
+  </g>
+  <path d="M494,291 L659.2,376.0" fill="none" stroke="#0f766e" stroke-width="2.5" marker-end="url(#ar-teal)"/>
+  <g transform="translate(562,376)">
+    <rect width="350" height="80" rx="9" fill="#ecfdf5" stroke="#9ee0cd"/>
+    <line x1="7" y1="14" x2="7" y2="66" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+    <text x="22" y="28" font-weight="700" font-size="15" fill="#0f766e">Express the uncertainty</text>
+    <text x="22" y="48" font-size="12.5" fill="#5b6573">stays on the boundary: faithful uncertainty,</text>
+    <text x="22" y="64" font-size="12.5" fill="#5b6573">hedged in proportion to what it knows</text>
+  </g>
+  <path d="M494,291 L657.0,256.6" fill="none" stroke="#8a95a3" stroke-width="2.5" marker-end="url(#ar-gray)"/>
+  <g transform="translate(657,194)">
+    <rect width="262" height="70" rx="9" fill="#ffffff" stroke="#d6dbe1"/>
+    <line x1="7" y1="14" x2="7" y2="56" stroke="#8a95a3" stroke-width="4" stroke-linecap="round"/>
+    <text x="22" y="28" font-weight="700" font-size="15" fill="#6b7480">Abstain</text>
+    <text x="22" y="48" font-size="12.5" fill="#5b6573">retreats inside: refuses</text>
+    <text x="22" y="64" font-size="12.5" fill="#5b6573">questions it could answer</text>
+  </g>
+  <g transform="translate(494,291)">
+    <circle r="7" fill="#1f2937"/>
+    <text x="-12" y="-11" text-anchor="end" font-weight="700" font-size="12.5" fill="#1f2937">a question at the edge</text>
+  </g>
+  <g transform="translate(297,61)">
+    <text text-anchor="middle" font-size="13" font-style="italic" fill="#0f766e">the knowledge boundary</text>
+  </g>
+</svg>

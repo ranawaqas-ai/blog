@@ -1,0 +1,64 @@
+direction: down
+
+q: "Question\nprimary DB dies,\ndo we lose writes?" {
+  shape: oval
+}
+
+a: Engineer A {
+  ans: "We're covered.\nReplication handles it." {
+    shape: rectangle
+  }
+  gap: "(never asks\nwhat it knows)" {
+    style.stroke-dash: 3
+    style.font-color: "#9aa0a6"
+  }
+  out: "Confident, unqualified.\nUnfalsifiable: sounds the\nsame whether or not any\nchecking ever happened." {
+    shape: page
+  }
+  ans -> gap {
+    style.animated: true
+  }
+  gap -> out {
+    style.animated: true
+  }
+}
+
+b: Engineer B {
+  check: "What do I\nactually know?" {
+    shape: diamond
+  }
+  known: "Known, certain:\nreplication is synchronous" {
+    shape: rectangle
+  }
+  unknown: "Unknown:\ndoes every service wait\nfor the commit before ack?" {
+    shape: rectangle
+  }
+  ans: "Sure on replication.\nNot sure on the ack.\nCheck the payments path." {
+    shape: rectangle
+  }
+  out: "Maps the boundary,\nnames what to verify.\nTransfers the audit." {
+    shape: page
+  }
+  check -> known {
+    style.animated: true
+  }
+  check -> unknown {
+    style.animated: true
+  }
+  known -> ans {
+    style.animated: true
+  }
+  unknown -> ans {
+    style.animated: true
+  }
+  ans -> out {
+    style.animated: true
+  }
+}
+
+q -> a.ans: same question {
+  style.animated: true
+}
+q -> b.check: same question {
+  style.animated: true
+}
