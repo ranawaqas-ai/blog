@@ -103,7 +103,8 @@ Go back to the incident review. Which engineer do you trust with the failover? B
 
 "I don't know," said in the right place, is one of the most intelligent things a system can say. The intelligence is in knowing the right places.
 
-## References and further reading
+<details markdown="1">
+<summary><strong>References and further reading</strong></summary>
 
 - Yona, G., Geva, M., and Matias, Y. (2026). [Hallucinations Undermine Trust; Metacognition is a Way Forward](https://arxiv.org/abs/2605.01428). ICML 2026 (position track). arXiv:2605.01428.
 - Kirichenko, P., Ibrahim, M., Chaudhuri, K., and Bell, S. J. (2025). [AbstentionBench: Reasoning LLMs Fail on Unanswerable Questions](https://arxiv.org/abs/2506.09038). arXiv:2506.09038.
@@ -115,3 +116,5 @@ Go back to the incident review. Which engineer do you trust with the failover? B
 - Kruger, J., and Dunning, D. (1999). [Unskilled and unaware of it: How difficulties in recognizing one's own incompetence lead to inflated self-assessments](https://doi.org/10.1037/0022-3514.77.6.1121). *Journal of Personality and Social Psychology*, 77(6), 1121 to 1134.
 - Lawson, R. (2006). [The science of cycology: Failures to understand how everyday objects work](https://doi.org/10.3758/BF03195929). *Memory & Cognition*, 34(8), 1667 to 1675.
 - Rozenblit, L., and Keil, F. (2002). [The misunderstood limits of folk science: An illusion of explanatory depth](https://doi.org/10.1207/s15516709cog2605_1). *Cognitive Science*, 26(5), 521 to 562.
+
+</details>
