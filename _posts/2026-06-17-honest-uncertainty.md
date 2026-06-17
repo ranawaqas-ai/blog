@@ -1,5 +1,5 @@
 ---
-title: "Honest Uncertainty Is a Sign of Intelligence"
+title: "Honest Uncertainty Is a Capability, Not Just a Virtue"
 category: research
 tag: [metacognition, ai]
 math: true
