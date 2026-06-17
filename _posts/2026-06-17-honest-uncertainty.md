@@ -79,13 +79,13 @@ Yao et al. (2025) open on a striking data point: OpenAI's o3, built to think lon
 
 The lesson generalises. Monitoring is a separate capability from reasoning. Pouring more computation into the object level does not conjure the meta-level signal, and you can't compute your way out of a signal you don't have. Think harder without better monitoring and all you get is a more elaborate bluff. It's Engineer A with a whiteboard.
 
-<img src="/assets/img/honest-uncertainty/reasoning-monitoring.svg" alt="More thinking scales object-level reasoning into a longer, more confident answer, but it does not build the meta-level monitoring that asks whether the model actually knows. With that check never run, the confident answer ships as an elaborate bluff." style="max-width:100%;height:auto;display:block;margin:1.5rem auto;">
-
 ## Agents raise the stakes
 
 In a chat window, a confident error costs you a wrong paragraph, and a sceptical reader can catch it. In an agent, it costs you actions. Tool calling is gated on self-assessment: a web search only fires usefully if the model can tell it doesn't know. A retrieval call, an escalation to a human, a request for clarification, each one is a control decision, and each one runs on a monitoring signal. Yona et al. make the same point structurally: in agentic systems, uncertainty awareness becomes the control layer deciding when to search and what to trust.
 
 Take that signal away and an agent fails in one of two familiar ways. It never asks for help (the confident bluff, now holding tools). Or it asks constantly (a search before every step, the tool reduced to a nervous tic). Bolting on more tools doesn't fix this, because the blind spot isn't in the tools. Every capability you add inherits the same broken gate.
+
+<img src="/assets/img/honest-uncertainty/tool-gate.svg" alt="Every tool an agent can call, web search, retrieval, escalation to a human, asking for clarification, and every new tool, is gated on one monitoring signal: does it actually know? When that gate goes blind, every tool inherits the failure, producing two modes: never asking for help (a confident bluff now armed with tools) or asking constantly (the tool reduced to a nervous tic)." style="max-width:100%;height:auto;display:block;margin:1.5rem auto;">
 
 ## The flip
 

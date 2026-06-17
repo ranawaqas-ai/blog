@@ -1,0 +1,71 @@
+direction: down
+
+step: "Each step: answer now,\nor reach for a tool?" {
+  shape: oval
+}
+
+gate: "The gate:\ndo I actually know?\n(the monitoring signal)" {
+  shape: diamond
+}
+
+tools: "Every tool is gated on that one signal" {
+  search: "web search" {
+    shape: rectangle
+  }
+  retr: "retrieval" {
+    shape: rectangle
+  }
+  esc: "escalate to a human" {
+    shape: rectangle
+  }
+  clar: "ask to clarify" {
+    shape: rectangle
+  }
+  more: "...and every tool\nyou add next" {
+    shape: rectangle
+    style.stroke-dash: 4
+    style.font-color: "#8a95a3"
+  }
+}
+
+blind: "Gate goes blind:\nevery tool inherits it" {
+  shape: rectangle
+  style.stroke: "#c4554d"
+  style.font-color: "#c4554d"
+}
+
+never: "Never fires:\nthe confident bluff,\nnow armed with tools" {
+  shape: page
+}
+always: "Fires every step:\na search before everything,\nthe tool as a nervous tic" {
+  shape: page
+}
+
+step -> gate {
+  style.animated: true
+}
+gate -> tools.search {
+  style.animated: true
+}
+gate -> tools.retr {
+  style.animated: true
+}
+gate -> tools.esc {
+  style.animated: true
+}
+gate -> tools.clar {
+  style.animated: true
+}
+gate -> tools.more {
+  style.animated: true
+}
+tools -> blind: no signal {
+  style.stroke: "#c4554d"
+  style.stroke-dash: 4
+}
+blind -> never {
+  style.stroke: "#c4554d"
+}
+blind -> always {
+  style.stroke: "#c4554d"
+}
