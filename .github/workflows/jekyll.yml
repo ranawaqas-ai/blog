@@ -59,6 +59,8 @@ jobs:
               open(sys.argv[1], 'w').write(content)
               print(f"Fixed {w}x{h}: {sys.argv[1]}")
           PYEOF
+            # Make the diagram adapt to dark mode through the <img> embed
+            python3 tools/inject-diagram-darkmode.py "$out"
           done
       - name: Setup Pages
         id: pages
