@@ -53,6 +53,12 @@ for span in spans:
 
 Gemma **states the correct fact** ("the horse and cart forces are equal and opposite") and then contradicts itself and picks B. The raw per-token entropy **spikes to 3 bits at the word "frame"** (the 50-token windowed mean, red, humps to ~1.4 there), the point where it confuses internal vs external forces and derails. Qwen (blue, bottom) has no such spike. The key point: **Gemma commits its wrong answer at p = 1.000.** The answer's confidence is totally blind to the error; only the *path* entropy flags it. So on this item the error is present in the path but not in the answer's confidence.
 
+Here is the exact passage from the trace where the entropy humps, inside its evaluation of option B:
+
+> ... the net force causing the system to accelerate is the external force applied by the horse to the ground (or the ground to the horse, depending on how you **frame** the system). This option correctly identifies the **necessary imbalance** of forces between the components ...
+
+A clause earlier it wrote that these forces are "equal and opposite (action-reaction)", so calling option B a "necessary imbalance" is a direct self-contradiction. The windowed peak (w=50) lands on `frame` (1.45 bits) and the single hottest raw token is `necessary` (3.73 bits), the word that opens the contradiction. The top-5 alternatives at `frame` are frame, define, isolate, analyze, choose, all about how to set the problem up, which is the internal-versus-external fork the model never resolves.
+
 ## Finding 2: temperature separates two kinds of error (4 items)
 
 ![Temperature sweep, 4 items, both models. Top: accuracy vs temperature, Qwen flat at 1.0, Gemma splits into two locked-at-0 items and two that recover. Bottom: mean entropy vs temperature, Qwen rises on every item, Gemma stays flat.](/assets/img/reading-the-path/fig-temperature.png)
