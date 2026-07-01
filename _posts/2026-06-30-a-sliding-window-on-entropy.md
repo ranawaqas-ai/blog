@@ -69,13 +69,27 @@ Sweeping temperature 0→1.0 (5 samples each):
 - **Gemma splits into two error types** (top-left): **locked** (r18, r42: wrong at all temperatures, a genuine misconception) vs **greedy-fragile** (r159, r47: greedy picks wrong, but sampling recovers the correct answer 60-100% of the time). **Half of these "errors" dissolve under sampling.**
 - **Entropy slope** (bottom): Qwen's entropy **rises** monotonically with temperature on all 4 items; Gemma's shows **no upward trend** on any (it wanders non-monotonically, netting ~zero). Qwen's token distributions are wide (it deliberates → temperature explores); Gemma's are peaked (it marches → temperature barely moves it).
 
+## Does the entropy peak find the error on other items?
+
+Shiqiang asked the sharp question here: on r18 the entropy peak sat right on the derailment, but does that hold on the other items, or is r18 just one nice example?
+
+Answering it honestly means not fooling myself. I had already seen the entropy on r18, so any "yes, it lines up" from me is suspect. So I ran it blind: an independent grader that never saw any entropy marked the single decisive-error sentence in each of the four genuine-error traces, verbatim. Then I measured the entropy against those spans, with the correct (Qwen) traces as controls.
+
+The honest result is that the entropy is a highlighter of the error region, not a pinpointer of the sentence.
+
+![Four genuine-error traces: windowed entropy over token position, with the blind-annotated error span shaded and the global entropy peak dashed. Every error span sits above the trace median, but the peak lands on it only for r18 and r47.](/assets/img/reading-the-path/entropy-localization.png)
+
+Every blind-marked error span sits well above the trace's median entropy (72nd to 99th percentile, mean 89th), so the reasoning does run hot where it goes wrong. But the single global peak lands on the decisive sentence in only 2 of 4 (r18 and r47, where it is adjacent). For r42 and r159 the peak is a different hump, the misconception as it is first expressed rather than the final commitment. So the method reliably flags the neighbourhood of the error, but you cannot read the exact error off the single highest point.
+
+This is the version I trust, because it corrects the cleaner-looking claim r18 alone would have suggested.
+
 ## What the path and the sweep add beyond accuracy
 
 The accuracy score reports only whether the final answer matches the key. On these items, the per-token path additionally locates where in the reasoning the model's uncertainty peaks, and the temperature sweep additionally separates errors that persist under sampling from those that do not. Both are properties the scalar score does not expose.
 
 ## Honest limits
 
-4 items, n=5 per temperature: qualitative, not powered. Same absolute temperature for both models (Shiqiang's fairness point stands: per-model-default sweeps are needed before any cross-model temperature claim). The entropy-localization in Finding 1 is my reading of a flagged region, not a proven cause.
+4 items, n=5 per temperature: qualitative, not powered. Same absolute temperature for both models (Shiqiang's fairness point stands: per-model-default sweeps are needed before any cross-model temperature claim). The entropy localizes the error neighbourhood, not the exact sentence (see the blind n=4 check above).
 
 ## What to do next
 
@@ -102,7 +116,9 @@ Everything ran on a single GPU of a shared workstation: one NVIDIA RTX PRO 6000 
 | temperature sweep | 4 temperatures, 5 samples each, 1 item, both models | ~14 min |
 | temperature sweep | 4 temperatures, 5 samples each, 3 items, both models | ~74 min |
 
-**Total: about two hours on one GPU.** Recording entropy adds only one softmax over the vocabulary per generated token, since it comes from the raw next-token logits the model already computes. The answer-key cleaning ran separately as a language-model workflow, not on the GPU.
+**Total: about two hours on one GPU.** The answer-key cleaning ran separately as a language-model workflow, not on the GPU.
+
+**The runs are generation-bound, not probe-bound.** Measured on one item (766-token greedy trace, same framework, 3 repeats): plain generation 14.3 s; generation while capturing every token's full distribution 14.1 s (within noise); computing entropy from those distributions 0.06 s (0.1 ms/token). So capturing all the probabilities costs about 0%, because `output_logits` just keeps the logits the model already computes to pick each token. The time is essentially all chain-of-thought generation (766 tokens at ~54 tokens/s here), and slower again on the 32B model.
 
 </details>
 
