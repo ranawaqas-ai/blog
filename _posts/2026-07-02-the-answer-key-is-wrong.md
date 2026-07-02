@@ -49,4 +49,4 @@ Qwen3-32B, given enough output tokens to finish, computed 10 µm, went looking f
 
 ---
 
-*The defect report with full evidence is at [aryopg/mmlu-redux#6](https://github.com/aryopg/mmlu-redux/issues/6), cross-posted to the [HF dataset discussion](https://huggingface.co/datasets/edinburgh-dawg/mmlu-redux-2.0/discussions/3). The sliding-window entropy method used in the animation is described in [A Sliding Window on Entropy](/posts/a-sliding-window-on-entropy/).*
+*The defect report with full evidence is at [aryopg/mmlu-redux#6](https://github.com/aryopg/mmlu-redux/issues/6), cross-posted to the [HF dataset discussion](https://huggingface.co/datasets/edinburgh-dawg/mmlu-redux-2.0/discussions/3). The sliding-window entropy method used in the animation is described in [A Sliding Window on Entropy](/posts/a-sliding-window-on-entropy/). The companion post on the harness layer: [The Model Stopped. The Harness Didn't.](/posts/the-model-stopped-the-harness-didnt/)*
