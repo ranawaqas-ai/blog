@@ -5,6 +5,8 @@ tag: [metacognition, ai, llm, evaluation]
 ---
 
 
+*Updated 2026-07-01: batched inference, the scaled 16-item sweep, and a fourth defective MMLU item (r80). The updates are marked inline.*
+
 **Setup.** Gemma-4-E2B (small) vs Qwen3-32B (reasoning model), on MMLU-physics items Gemma gets wrong. First I gold-cleaned the wrong set: of 59 Gemma-wrong items, **3 had wrong answer keys in MMLU itself** (~5%, verified against MMLU-Redux-2.0 + independent re-derivation), so those are excluded. We study real reasoning errors, not label noise. Then, on clean errors, I do two things the accuracy score can't: read the per-token reasoning path, and sweep temperature. **Scope:** this proves the *method* on two contrasting models (a small model vs a reasoning model); expanding to more models is the planned next step, not a claim made here.
 
 ## The 4 questions (all gold-clean; Gemma wrong at greedy, Qwen correct)
@@ -61,6 +63,8 @@ A clause earlier it wrote that these forces are "equal and opposite (action-reac
 
 ## Finding 2: temperature separates two kinds of error (4 items)
 
+> **Update (2026-07-01): the two-kinds split did not survive scale; it is a continuum.** How we got there: batching made the full sweep affordable, so the fix promised in next-step 2 was actually run (16 gold-clean items, 20 samples per temperature instead of 5). At n=20, "locked" r18 turned out to recover 6/20 at T=0.7, only r42 stayed at 0/20 at every temperature, and the 16 items' recovery rates spread continuously from 0/20 to 19/20 rather than splitting into two groups (see the fan of faint lines in the update section's figure). So the clean binary below was a small-sample artifact: with 5 samples, an item recovering at a true ~30% rate looks "locked" roughly one time in six. The text below is kept as the n=5 record; the defensible claim is now a *gradient of greedy-fragility*, with true lock-in rare (1 of 16).
+
 ![Temperature sweep, 4 items, both models. Top: accuracy vs temperature, Qwen flat at 1.0, Gemma splits into two locked-at-0 items and two that recover. Bottom: mean entropy vs temperature, Qwen rises on every item, Gemma stays flat.](/assets/img/reading-the-path/fig-temperature.png)
 
 Sweeping temperature 0→1.0 (5 samples each):
@@ -89,7 +93,7 @@ The accuracy score reports only whether the final answer matches the key. On the
 
 ## Honest limits
 
-4 items, n=5 per temperature: qualitative, not powered. Same absolute temperature for both models (Shiqiang's fairness point stands: per-model-default sweeps are needed before any cross-model temperature claim). The entropy localizes the error neighbourhood, not the exact sentence (see the blind n=4 check above).
+~~4 items, n=5 per temperature: qualitative, not powered.~~ **[Fixed 2026-07-01: the sweep is now 16 items × 20 samples per temperature; that is what corrected Finding 2.]** Still true: same absolute temperature for both models (Shiqiang's fairness point stands: per-model-default sweeps are needed before any cross-model temperature claim); pure temperature only, no top-p pass; two models. The entropy localizes the error neighbourhood, not the exact sentence, and that blind check is still n=4. One new limit the r80 episode exposed: answers are read from traces capped at 3072 tokens, and a cap-hit can disguise a long correct deliberation (in r80's case, a refusal) as a wrong answer, so cap-hit "errors" need re-checking at a larger budget before they count.
 
 ## What to do next
 
@@ -98,10 +102,39 @@ The accuracy score reports only whether the final answer matches the key. On the
 **Three limits of that setup, each with its fix:**
 
 1. **It can't fairly compare the two models.** The same temperature can be a normal setting for one model and "too hot" for the other, so "Qwen beats Gemma at T=0.7" isn't a fair statement; it might just be Qwen's better operating point. *Fix:* also sweep each model around *its own* recommended temperature (e.g. 0.5× and 2× its default). That is the only setup in which a model-vs-model comparison is fair.
-2. **It's too small to be a real number.** 4 items × 5 samples means a figure like "Gemma 1/5" is an illustration, not a measured rate. *Fix:* run all 15 gold-clean items with ≥20 samples per temperature, so the locked-vs-greedy-fragile split comes with error bars instead of anecdotes.
+2. **It's too small to be a real number.** 4 items × 5 samples means a figure like "Gemma 1/5" is an illustration, not a measured rate. *Fix:* run all 15 gold-clean items with ≥20 samples per temperature, so the locked-vs-greedy-fragile split comes with error bars instead of anecdotes. **[Done 2026-07-01 with the batched runner; see the update section below.]**
 3. **Only 2 models, and idealised decoding.** One small + one reasoning model, pure temperature only (no top-p/top-k), and just 4 temperature points. *Fix:* add more models, a finer temperature grid, and one realistic (top-p) decoding pass, to test whether "small model marches, reasoning model deliberates" generalises, and to locate where the locked→greedy-fragile switch happens.
 
-**Separate question for Shiqiang.** The 3 confirmed wrong MMLU answer keys: worth reporting upstream as a small contribution? (MMLU-Redux-2.0 already flags r67 and r152; r98 we caught independently via re-derivation.)
+**Defective MMLU items: now 4, not 3 (updated 2026-07-01).** The original count was 3 confirmed wrong answer keys (MMLU-Redux-2.0 already flags r67 and r152; r98 we caught independently via re-derivation). Since then the count grew, and the fourth is a different defect type. The trail: in the scaled sweep Qwen "failed" college r80 on 51 of 61 draws, which contradicted its ~0.99 accuracy everywhere else; checking those misses showed most had hit the 3072-token cap mid-reasoning, so the failure was re-run with a 16k budget; Qwen then finished naturally (4,041 tokens), derived the answer (10 µm by Wien's law), wrote that option A, "10:00 PM", *is a time, not a wavelength*, and answered UNKNOWN; reading the stored dataset row confirmed option A's text is literally `'10:00 PM'`, a corruption of "10 µm". So r80's gold *letter* is right but its option *text* is broken, which is why both MMLU-Redux's check and our gold-cleaning missed it: each validates the key, not the text. The catch itself is a small argument for reading traces: the model narrated the dataset bug that every letter-level check passed over.
+
+![Animation: the sliding window crosses Qwen's 4,041-token r80 trace; 42 spans flag as the doubt phrases surface ("none of the options match... unless there's a mistake"), and it ends on "A. 10:00 PM: this is a time, not a wavelength" and Answer: UNKNOWN, with the corrupted dataset row shown.](/assets/img/reading-the-path/r80-doubt-loop-2026-07-02.gif)
+
+Watching the detector cross the r80 trace shows the whole episode in one pass: 42 flagged spans, the doubt surfacing verbatim at the hot spots, and an ending that never commits.
+
+![Animation: side-by-side sliding windows over Gemma's r18 trace and Qwen's r80 trace. r18 draws a single hot derail region and ends "commits B at p = 1.000"; r80 draws a sawtooth of 42 flagged spans and ends "Answer: UNKNOWN".](/assets/img/reading-the-path/failure-fingerprints-r18-vs-r80-2026-07-02.gif)
+
+Side by side with r18, the same detector draws two different failure shapes: r18 is one derail ending in a confident wrong commit (p = 1.000), r80 is a sawtooth of recurring doubt ending in a refusal. An observation from two traces, not a finding, but it suggests the entropy profile's *shape*, not just its peaks, carries diagnostic information.
+
+## Update (2026-07-01): batched inference, the sweep now runs ~4x faster
+
+Shiqiang asked whether batched inference could be implemented in the current HuggingFace codebase. It could, with no new dependency: instead of generating a temperature group's samples one at a time, the runner replicates the prompt into a batch of n rows and generates them in a single `generate()` call, so the n sequences share each decode step's weight load. Measured A/B on the same item, same GPU, same framework:
+
+![Bar chart, sequential vs batched wall-clock on the same sweep config. Gemma: 216 s sequential vs 46 s batched (4.7x). Qwen3-32B: 729 s vs 186 s (3.9x).](/assets/img/reading-the-path/batched-ab-timing-2026-07-01.png)
+
+The grey bars are the existing per-sample loop; the blue bars are the same sweep as one batched call per temperature. The gain lands near the ideal 5x because the 5 samples of one item finish at similar lengths, so little compute is wasted padding the batch to its longest row; on runs with more length variance the gain shrinks (HF pads every row to the longest and keeps decoding finished rows, which is the known ceiling a continuous-batching engine like vLLM would lift).
+
+| model (1 item, 3 temps × 5 samples) | sequential | batched | speedup |
+|---|---|---|---|
+| Gemma-4-E2B | 215.8 s | 46.3 s | **4.7x** |
+| Qwen3-32B | 728.6 s | 186.4 s | **3.9x** |
+
+Correctness was gated before use. On the deterministic (greedy) case all batched rows are bit-identical to each other under the same per-token entropy machinery as the single-sample probe; on the sampled case, accuracy and mean entropy match the sequential runner (Qwen 15/15 correct both ways, entropy within 0.05 bits). One honest caveat: bf16 GPU kernels are not batch-invariant, so a batched and a single-sequence greedy run drift apart after a few tokens (a documented numerical effect, not a bug). Batched entropy is therefore only compared within batched runs, and every number in this post stays from the sequential path. Batching also does not speed up a single trace (Finding 1 is one sequence); the win is throughput on multi-sample runs.
+
+The speedup was immediately spent on next-step 2 above: the full sweep, 16 gold-clean items × 20 samples × 4 temperatures, both models, ran in ~5.3 h on one GPU (roughly a day, sequentially).
+
+![Scaled sweep, 16 items, 20 samples per temperature. Left: accuracy vs temperature, Gemma pinned at 0 for greedy and ~0.34 sampled with wide per-item spread, Qwen high and flat ~0.94. Right: mean raw entropy vs temperature, Gemma flat ~0.54, Qwen rising 0.68 to 0.94.](/assets/img/reading-the-path/tempsweep-scaled-16items-2026-07-01.png)
+
+Thick lines are the across-item means, faint lines the 16 individual items. The left panel is the correction: Gemma's faint lines fan out across the whole range instead of splitting into two clean groups, so Finding 2's locked-vs-greedy-fragile split softens into a *continuum* (only 1 of 16 items is truly locked at n=20; r18 itself recovers 6/20 at T=0.7). The right panel is the confirmation: the entropy-slope signature (Qwen rises with temperature, Gemma stays flat) replicates at scale and remains the sweep's most robust finding. The run also exposed the **fourth defective MMLU item** described above (college r80: the gold letter is right but its option text is corrupted to "10:00 PM" where the physics answer is 10 µm; Qwen, given room, derives 10 µm and correctly refuses to pick).
 
 <details markdown="1">
 <summary><strong>Wall-clock time and compute</strong> (click to expand)</summary>
@@ -115,8 +148,10 @@ Everything ran on a single GPU of a shared workstation: one NVIDIA RTX PRO 6000 
 | deep probe | full per-token probe on the horse-cart item | ~2 min |
 | temperature sweep | 4 temperatures, 5 samples each, 1 item, both models | ~14 min |
 | temperature sweep | 4 temperatures, 5 samples each, 3 items, both models | ~74 min |
+| batched A/B (07-01) | sweep on 1 item, sequential vs batched, both models | 216→46 s / 729→186 s |
+| scaled sweep (07-01) | 16 items, 4 temperatures, 20 samples, both models, batched | ~5.3 h (Gemma 44 min + Qwen 4.6 h) |
 
-**Total: about two hours on one GPU.** The answer-key cleaning ran separately as a language-model workflow, not on the GPU.
+**Total: about two hours on one GPU** for the original batch; the 07-01 batched runs add ~5.5 h. The answer-key cleaning ran separately as a language-model workflow, not on the GPU.
 
 **The runs are generation-bound, not probe-bound.** Measured on one item (766-token greedy trace, same framework, 3 repeats): plain generation 14.3 s; generation while capturing every token's full distribution 14.1 s (within noise); computing entropy from those distributions 0.06 s (0.1 ms/token). So capturing all the probabilities costs about 0%, because `output_logits` just keeps the logits the model already computes to pick each token. The time is essentially all chain-of-thought generation (766 tokens at ~54 tokens/s here), and slower again on the 32B model.
 
