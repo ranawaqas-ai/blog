@@ -4,7 +4,7 @@ category: research
 tag: [ai, llm, evaluation, datasets]
 ---
 
-**Setup.** MMLU is one of the standard benchmarks LLMs are scored on. While doing an error analysis on its physics subjects, every "the model got this wrong" first had to survive a check the benchmark itself rarely gets: is the model wrong, or is the question? Among the physics items one small model got wrong, four turned out to be defective in the dataset itself, in two different ways. All four are now reported upstream: [aryopg/mmlu-redux#6](https://github.com/aryopg/mmlu-redux/issues/6).
+**Setup.** MMLU is one of the standard benchmarks LLMs are scored on. While doing an error analysis on its physics subjects, every "the model got this wrong" first had to survive a check the benchmark itself rarely gets: is the model wrong, or is the question? Among the physics items one small model got wrong, four turned out to be defective in the dataset itself, in two different ways. All four are now reported upstream, on the paper repo ([aryopg/mmlu-redux#6](https://github.com/aryopg/mmlu-redux/issues/6)) and on the dataset's own Community tab ([mmlu-redux-2.0 discussion #3](https://huggingface.co/datasets/edinburgh-dawg/mmlu-redux-2.0/discussions/3)).
 
 ## Defect type 1: the answer key is wrong (3 items)
 
@@ -49,4 +49,4 @@ Qwen3-32B, given enough output tokens to finish, computed 10 µm, went looking f
 
 ---
 
-*The defect report with full evidence is at [aryopg/mmlu-redux#6](https://github.com/aryopg/mmlu-redux/issues/6). The sliding-window entropy method used in the animation is described in [A Sliding Window on Entropy](/posts/a-sliding-window-on-entropy/).*
+*The defect report with full evidence is at [aryopg/mmlu-redux#6](https://github.com/aryopg/mmlu-redux/issues/6), cross-posted to the [HF dataset discussion](https://huggingface.co/datasets/edinburgh-dawg/mmlu-redux-2.0/discussions/3). The sliding-window entropy method used in the animation is described in [A Sliding Window on Entropy](/posts/a-sliding-window-on-entropy/).*
