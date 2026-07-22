@@ -30,7 +30,7 @@ Full background on Rana Waqas is in `../context/` (one level up). Read these bef
 - **Theme**: VENDORED fork of Chirpy 7.5.0, ejected from the gem on 2026-06-10 (tag `pre-theme-eject` is the last gem-based commit). All theme files (`_layouts`, `_includes`, `_sass`, `assets`, `_data/locales`, etc.) live in this repo and are edited directly; there is no theme gem. Chirpy's MIT license kept at `LICENSE-chirpy`. The former gem's plugin deps are now explicit in `Gemfile` and `plugins:` in `_config.yml` (the gem's auto-require is gone).
 - **Ruby**: 3.4 (CI), local debug uses rbenv 3.2.0
 - **CI**: GitHub Actions — `.github/workflows/jekyll.yml`
-- **Comments**: Giscus (waqaskhan137/ranawaqas, Announcements category)
+- **Comments**: Giscus (ranawaqas-ai/blog, Announcements category)
 - **Analytics**: GA4 G-ERD23968FK
 - **Domain**: blog.waqasrana.space (CNAME), deployed to GitHub Pages
 
@@ -54,9 +54,9 @@ Full background on Rana Waqas is in `../context/` (one level up). Read these bef
 - **D2 sources**: `assets/img/dareen/webdev-flow.d2`, `assets/img/trading-strategy/trading-flow.d2`
 
 ## SSH / Git Remote
-- Remote uses SSH alias `git@github.com-personal:waqaskhan137/ranawaqas.git`
+- Remote: `https://github.com/ranawaqas-ai/blog.git` (HTTPS)
 - SSH key: `~/.ssh/id_ed25519_personal` (added to GitHub via `gh ssh-key add`)
-- `gh` CLI authenticated as `waqaskhan137` via HTTPS token
+- `gh` CLI authenticated as `ranawaqas-ai` via HTTPS token
 
 ## Theme Customisation (post-eject)
 - The theme is local now: edit `_layouts/`, `_includes/`, `_sass/`, `assets/` directly. The old "shadow the gem file" override pattern is obsolete (there is no gem to shadow); historical overrides like the empty `_includes/trending-tags.html` still work simply as the real files.

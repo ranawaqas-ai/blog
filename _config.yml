@@ -19,7 +19,7 @@ url: "https://blog.waqasrana.space"
 baseurl: ""
 
 github:
-  username: waqaskhan137
+  username: ranawaqas-ai
 twitter:
   username: waqas137
   card: summary_large_image
@@ -28,7 +28,7 @@ social:
   email: waqaskhan137@gmail.com
   links:
     - https://www.linkedin.com/in/ranamuhammadwaqas
-    - https://github.com/waqaskhan137
+    - https://github.com/ranawaqas-ai
     - https://orcid.org/0009-0005-0868-1984
 
 analytics:
@@ -44,7 +44,7 @@ toc: true
 comments:
   provider: giscus
   giscus:
-    repo: waqaskhan137/blog
+    repo: ranawaqas-ai/blog
     repo_id: R_kgDOK3YJYQ
     category: Announcements
     category_id: DIC_kwDOK3YJYc4Cbn4P

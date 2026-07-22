@@ -25,5 +25,5 @@ If you want to run this blog locally:
 
 1. Clone this repository
 ```bash
-git clone https://github.com/waqaskhan137/ranawaqas.git
-cd ranawaqas
+git clone https://github.com/ranawaqas-ai/blog.git
+cd blog

@@ -16,7 +16,7 @@ voice AI, and the unglamorous parts of getting these systems to production.
 ## Get in touch
 
 - **LinkedIn:** [ranamuhammadwaqas](https://www.linkedin.com/in/ranamuhammadwaqas/)
-- **GitHub:** [waqaskhan137](https://github.com/waqaskhan137)
+- **GitHub:** [ranawaqas-ai](https://github.com/ranawaqas-ai)
 - **ORCID:** [0009-0005-0868-1984](https://orcid.org/0009-0005-0868-1984)
 - **Email:** [waqaskhan137@gmail.com](mailto:waqaskhan137@gmail.com)
 - **Book a call:** [Calendly](https://calendly.com/waqaskhan137/one-on-one-session)

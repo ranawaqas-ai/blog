@@ -6,7 +6,7 @@ tag: [tutorial, webdev, flask]
 
 This one is for Dareen. If you are curious about how web development works, what shows up in your browser, the code that powers it, and where the data lives, you are in the right place. We will build a small but complete app from first principles: a cookie recipe manager.
 
-All the code lives in the [cookie-manager repository](https://github.com/waqaskhan137/cookie-manager). Clone it, run it, break it, change the colors, make it yours.
+All the code lives in the [cookie-manager repository](https://github.com/ranawaqas-ai/cookie-manager). Clone it, run it, break it, change the colors, make it yours.
 
 ## First principles: what is a web app?
 
@@ -205,7 +205,7 @@ def list_guests():
     return jsonify(guestbook)
 ```
 
-That is the entire feature. The page itself is in the [repository](https://github.com/waqaskhan137/cookie-manager), and if you read it next to `index.html` you will see it is the same pattern with different words. Once you can spot that pattern, you can read most web apps.
+That is the entire feature. The page itself is in the [repository](https://github.com/ranawaqas-ai/cookie-manager), and if you read it next to `index.html` you will see it is the same pattern with different words. Once you can spot that pattern, you can read most web apps.
 
 ## A note on the styling
 
