@@ -12,8 +12,8 @@ lang: en
 timezone: Asia/Karachi
 
 title: Rana Waqas
-tagline: AI Engineer · LLM Reliability
-description: "Rana Waqas, AI engineer and engineering leader. I build and ship AI products in industry, and I research the hard problems in LLMs: hallucination, metacognition, and model architecture. MSc Generative AI at the University of Exeter."
+tagline: Metacognition in small language models
+description: "Rana Waqas researches metacognition in small language models, so that AI you run yourself knows when to trust its own answers. Notes on the experiments and the engineering behind them."
 
 url: "https://blog.waqasrana.space"
 baseurl: ""
