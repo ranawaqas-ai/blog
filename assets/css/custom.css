@@ -1,9 +1,49 @@
 /* =============================================================
-   Brand alignment: blog.waqasrana.space → waqasrana.space
-   Teal accent: #0f766e (light) / #2dd4bf (dark)
-   Warm backgrounds: #fafaf9 (light) / #111111 (dark)
-   Fonts: Charter (headings), DM Sans (body/UI), Fira Code (mono)
+   Brand alignment: blog.waqasrana.space matches waqasrana.space
+   Terracotta accent: #a84724 (light) / #ee8d63 (dark)
+   Backgrounds: #ffffff (light) / #111111 (dark)
+   Fonts: Source Serif 4 (text and headings), Fira Code (labels, code)
+   Values come from portfolio/src/index.css. Change both together.
    ============================================================= */
+
+/* ---------------------------------------------------------------
+   Fonts, served from this site. metadata-hook.html preloads the Latin
+   Source Serif 4 file. Each file loads only when the page has
+   characters in its range (Greek letters turn up in the research posts).
+   --------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/assets/fonts/source-serif-4-greek.woff2') format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/assets/fonts/source-serif-4-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/assets/fonts/source-serif-4-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url('/assets/fonts/fira-code-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 /* ---------------------------------------------------------------
    SECTION A: CSS variable overrides
@@ -14,24 +54,25 @@
 @media (prefers-color-scheme: light) {
   html:not([data-mode]),
   html[data-mode='light'] {
-    --main-bg: #fafaf9;
-    --card-bg: #fafaf9;
-    --topbar-bg: rgb(250 250 249 / 70%);
+    --main-bg: #ffffff;
+    --card-bg: #ffffff;
+    --topbar-bg: rgb(255 255 255 / 70%);
     --text-color: #111111;
     --post-list-text-color: #111111;
-    --link-color: #0f766e;
-    --link-underline-color: rgb(15 118 110 / 30%);
-    --toc-highlight: #0f766e;
-    --checkbox-checked-color: #0f766e;
-    --btn-share-hover-color: #0f766e;
-    --sidebar-bg: #f2f5f4;
-    --sidebar-border-color: #e8ecea;
-    --sidebar-hover-bg: rgb(15 118 110 / 8%);
+    --link-color: #a84724;
+    --link-underline-color: rgb(168 71 36 / 30%);
+    --toc-highlight: #a84724;
+    --checkbox-checked-color: #a84724;
+    --btn-share-hover-color: #a84724;
+    --sidebar-bg: #f6f6f4;
+    --sidebar-border-color: #dddddb;
+    --main-border-color: #dddddb;
+    --sidebar-hover-bg: rgb(168 71 36 / 8%);
     --sidebar-muted-color: #575757;
-    --sidebar-active-color: #0f766e;
-    --site-title-color: #555555;
+    --sidebar-active-color: #a84724;
+    --site-title-color: #111111;
     --site-subtitle-color: #6b6b6b;
-    --tag-hover: rgb(15 118 110 / 12%);
+    --tag-hover: rgb(168 71 36 / 12%);
   }
 
   html[data-mode='dark'] {
@@ -43,24 +84,24 @@
     --card-header-bg: #242424;
     --button-bg: #1a1a1a;
     --btn-border-color: #2a2a2a;
-    --main-border-color: rgb(42 42 42);
+    --main-border-color: #2e2e2e;
     --tb-odd-bg: #1e1e1e;
     --tb-even-bg: #161616;
-    --link-color: #2dd4bf;
-    --link-underline-color: rgb(45 212 191 / 30%);
-    --toc-highlight: #2dd4bf;
-    --checkbox-checked-color: #2dd4bf;
-    --btn-share-hover-color: #2dd4bf;
+    --link-color: #ee8d63;
+    --link-underline-color: rgb(238 141 99 / 30%);
+    --toc-highlight: #ee8d63;
+    --checkbox-checked-color: #ee8d63;
+    --btn-share-hover-color: #ee8d63;
     --sidebar-bg: #161616;
     --sidebar-border-color: #242424;
     --sidebar-hover-bg: #1f1f1f;
     --sidebar-btn-bg: #1c1c1c;
-    --sidebar-active-color: #2dd4bf;
+    --sidebar-active-color: #ee8d63;
     --sidebar-muted-color: #868686;
-    --site-title-color: #888888;
+    --site-title-color: #f8f7f5;
     --site-subtitle-color: #868686;
-    --tag-hover: rgb(45 212 191 / 12%);
-    --tag-border: rgb(45 212 191 / 25%);
+    --tag-hover: rgb(238 141 99 / 12%);
+    --tag-border: rgb(238 141 99 / 25%);
   }
 }
 
@@ -75,52 +116,53 @@
     --card-header-bg: #242424;
     --button-bg: #1a1a1a;
     --btn-border-color: #2a2a2a;
-    --main-border-color: rgb(42 42 42);
+    --main-border-color: #2e2e2e;
     --tb-odd-bg: #1e1e1e;
     --tb-even-bg: #161616;
-    --link-color: #2dd4bf;
-    --link-underline-color: rgb(45 212 191 / 30%);
-    --toc-highlight: #2dd4bf;
-    --checkbox-checked-color: #2dd4bf;
-    --btn-share-hover-color: #2dd4bf;
+    --link-color: #ee8d63;
+    --link-underline-color: rgb(238 141 99 / 30%);
+    --toc-highlight: #ee8d63;
+    --checkbox-checked-color: #ee8d63;
+    --btn-share-hover-color: #ee8d63;
     --sidebar-bg: #161616;
     --sidebar-border-color: #242424;
     --sidebar-hover-bg: #1f1f1f;
     --sidebar-btn-bg: #1c1c1c;
-    --sidebar-active-color: #2dd4bf;
+    --sidebar-active-color: #ee8d63;
     --sidebar-muted-color: #868686;
-    --site-title-color: #888888;
+    --site-title-color: #f8f7f5;
     --site-subtitle-color: #868686;
-    --tag-hover: rgb(45 212 191 / 12%);
-    --tag-border: rgb(45 212 191 / 25%);
+    --tag-hover: rgb(238 141 99 / 12%);
+    --tag-border: rgb(238 141 99 / 25%);
   }
 
   html[data-mode='light'] {
-    --main-bg: #fafaf9;
-    --card-bg: #fafaf9;
-    --topbar-bg: rgb(250 250 249 / 70%);
+    --main-bg: #ffffff;
+    --card-bg: #ffffff;
+    --topbar-bg: rgb(255 255 255 / 70%);
     --text-color: #111111;
     --post-list-text-color: #111111;
-    --link-color: #0f766e;
-    --link-underline-color: rgb(15 118 110 / 30%);
-    --toc-highlight: #0f766e;
-    --checkbox-checked-color: #0f766e;
-    --btn-share-hover-color: #0f766e;
-    --sidebar-bg: #f2f5f4;
-    --sidebar-border-color: #e8ecea;
-    --sidebar-hover-bg: rgb(15 118 110 / 8%);
+    --link-color: #a84724;
+    --link-underline-color: rgb(168 71 36 / 30%);
+    --toc-highlight: #a84724;
+    --checkbox-checked-color: #a84724;
+    --btn-share-hover-color: #a84724;
+    --sidebar-bg: #f6f6f4;
+    --sidebar-border-color: #dddddb;
+    --main-border-color: #dddddb;
+    --sidebar-hover-bg: rgb(168 71 36 / 8%);
     --sidebar-muted-color: #575757;
-    --sidebar-active-color: #0f766e;
-    --site-title-color: #555555;
+    --sidebar-active-color: #a84724;
+    --site-title-color: #111111;
     --site-subtitle-color: #6b6b6b;
-    --tag-hover: rgb(15 118 110 / 12%);
+    --tag-hover: rgb(168 71 36 / 12%);
   }
 }
 
 /* ---------------------------------------------------------------
    SECTION B: Hardcoded hover color override
    Chirpy's %link-hover compiles to color:#d2603a !important globally.
-   Override with teal — light mode default, dark mode via data-mode + media.
+   Override with terracotta — light mode default, dark mode via data-mode + media.
    --------------------------------------------------------------- */
 
 #page-category a:hover,
@@ -132,8 +174,8 @@ footer a:hover,
 #topbar #breadcrumb a:hover,
 .post-meta a:not([class]):hover,
 .content a:not(.img-link):hover {
-  color: #0f766e !important;
-  border-bottom-color: #0f766e !important;
+  color: #a84724 !important;
+  border-bottom-color: #a84724 !important;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -146,8 +188,8 @@ footer a:hover,
   html:not([data-mode]) #topbar #breadcrumb a:hover,
   html:not([data-mode]) .post-meta a:not([class]):hover,
   html:not([data-mode]) .content a:not(.img-link):hover {
-    color: #2dd4bf !important;
-    border-bottom-color: #2dd4bf !important;
+    color: #ee8d63 !important;
+    border-bottom-color: #ee8d63 !important;
   }
 }
 
@@ -160,35 +202,69 @@ html[data-mode='dark'] footer a:hover,
 html[data-mode='dark'] #topbar #breadcrumb a:hover,
 html[data-mode='dark'] .post-meta a:not([class]):hover,
 html[data-mode='dark'] .content a:not(.img-link):hover {
-  color: #2dd4bf !important;
-  border-bottom-color: #2dd4bf !important;
+  color: #ee8d63 !important;
+  border-bottom-color: #ee8d63 !important;
 }
 
 /* ---------------------------------------------------------------
    SECTION C: Font-family overrides
    Chirpy hardcodes font names in SCSS vars (not CSS custom properties).
-   Charter is a system font on macOS/iOS — no web font load needed.
+   Source Serif 4 for everything that is read, Fira Code for small
+   labels and code, the same split the portfolio uses.
    --------------------------------------------------------------- */
 
-body {
-  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
-}
-
+body,
 header .post-desc,
 #toc-bar .label,
 #search-results a,
-h1, h2, h3, h4, h5 {
-  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
-  font-weight: 400;
-}
-
-/* Post reading text in Charter (the font from the mdreview view).
-   Scoped to article body only; site chrome (sidebar, nav, lists) stays DM Sans.
-   Code keeps Fira Code via its own rule below. */
+h1, h2, h3, h4, h5,
 .content p,
 .content li,
-.content blockquote {
-  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+.content blockquote,
+kbd,
+.tag span {
+  font-family: 'Source Serif 4', Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  font-optical-sizing: auto;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+}
+
+/* The name is set like the portfolio's: bold uppercase serif. */
+#sidebar .site-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+#sidebar .site-subtitle {
+  font-style: normal !important;
+}
+
+/* Small labels in mono, like the portfolio's section headings and dates. */
+#sidebar .nav-link span,
+.post-meta,
+.post-meta time,
+#topbar #breadcrumb,
+.archive-list-header,
+#panel-wrapper .panel-heading,
+.toc-popup .panel-heading {
+  font-family: 'Fira Code', Menlo, 'Courier New', monospace;
+}
+
+#sidebar .nav-link span {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+}
+
+#panel-wrapper .panel-heading {
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--link-color);
 }
 
 /* Mermaid diagrams (rendered by metadata-hook.html) */
@@ -208,25 +284,17 @@ pre,
   font-family: 'Fira Code', Menlo, 'Courier New', monospace;
 }
 
-kbd,
-.tag span,
-.archive-list-header,
-#panel-wrapper .panel-heading,
-.toc-popup .panel-heading {
-  font-family: 'DM Sans', system-ui, sans-serif;
-}
-
 /* ---------------------------------------------------------------
    SECTION D: Text selection highlight
    --------------------------------------------------------------- */
 
 ::selection {
-  background-color: rgb(15 118 110 / 25%);
+  background-color: rgb(168 71 36 / 25%);
   color: inherit;
 }
 
 /* ---------------------------------------------------------------
-   SECTION E: Sidebar bottom — keep all 6 icons on one row
+   SECTION E: Sidebar bottom, keep the icons on one row
    The default 0.8rem gap + dot separator overflows the 260px
    sidebar with 5 contact icons + mode toggle. Fix: hide the dot
    and tighten the gap so everything fits on a single row.

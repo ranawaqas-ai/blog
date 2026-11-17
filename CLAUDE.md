@@ -31,7 +31,7 @@ Full background on Rana Waqas is in `../context/` (one level up). Read these bef
 - **Ruby**: 3.4 (CI), local debug uses rbenv 3.2.0
 - **CI**: GitHub Actions — `.github/workflows/jekyll.yml`
 - **Comments**: Giscus (ranawaqas-ai/blog, Announcements category)
-- **Analytics**: GA4 G-ERD23968FK
+- **Analytics**: self-hosted Umami at `stats.waqasrana.space` (no cookies, production builds only). Google Analytics was removed on 2026-11-17.
 - **Domain**: blog.waqasrana.space (CNAME), deployed to GitHub Pages
 
 ## Key Config
@@ -86,20 +86,23 @@ Full background on Rana Waqas is in `../context/` (one level up). Read these bef
 
 **fail2ban on Chirpy's sidebar** — 6 icons overflow onto two rows because the default gap + dot separator fill the 260px sidebar. Fix is in `custom.css` Section E: hide `.icon-border` and reduce `margin-right` to `0.5rem`.
 
-## Color Alignment with Portfolio
+## Look shared with the portfolio
 
-The portfolio's canonical color tokens and their blog equivalents in `assets/css/custom.css`:
+The blog takes its colours, fonts and theme rule from the portfolio (`../portfolio/src/index.css`, `../portfolio/src/lib/theme.ts`). Change both sites together.
 
-| Token | Portfolio value | Blog CSS var | Notes |
+| Token | Light | Dark | Blog CSS vars in `assets/css/custom.css` |
 |---|---|---|---|
-| Light background | `#fafaf9` | `--main-bg`, `--card-bg` | Must set both — `--card-bg` defaults to `#ffffff` |
-| Light text | `#111111` | `--text-color`, `--post-list-text-color` | Chirpy default is `#34343c` |
-| Dark background | `#111111` | `--main-bg` | Cards stay `#1a1a1a` intentionally (depth) |
-| Dark text | `#f8f7f5` (warm near-white) | `--text-color`, `--post-list-text-color` | Chirpy default is `#afafb1` (gray) — biggest mismatch |
-| Light accent | `#0f766e` | `--link-color`, `--toc-highlight`, `--sidebar-active-color` | ✓ aligned |
-| Dark accent | `#2dd4bf` | `--link-color`, `--toc-highlight`, `--sidebar-active-color` | ✓ aligned |
+| Background | `#ffffff` | `#111111` | `--main-bg`, `--card-bg` (dark cards stay `#1a1a1a`) |
+| Text | `#111111` | `#f8f7f5` | `--text-color`, `--post-list-text-color` |
+| Accent (terracotta) | `#a84724` | `#ee8d63` | `--link-color`, `--toc-highlight`, `--sidebar-active-color` |
+| Border | `#dddddb` | `#2e2e2e` | `--main-border-color`, `--sidebar-border-color` |
+| Sidebar | `#f6f6f4` | `#161616` | `--sidebar-bg` |
 
-**Key gotcha**: `--card-bg` and `--text-color` are NOT overridden by default — always set them explicitly or Chirpy's defaults drift from the portfolio palette. All four blocks of the four-way cascade must include them.
+Fonts: Source Serif 4 for text and headings, Fira Code for small labels, dates and code. Both load in `_includes/metadata-hook.html`.
+
+Theme: `assets/js/theme-clock.js` replaces Chirpy's `theme.min.js`. Light from 07:00 to 19:00 by the visitor's clock, dark otherwise; the sidebar toggle holds until the next switch. It always sets `data-mode`, so the system colour scheme no longer decides the theme.
+
+**Key gotcha**: `--card-bg` and `--text-color` are not overridden by default. Set them in all four blocks of the four-way cascade or Chirpy's defaults drift from the portfolio palette.
 
 ## Known Issues & Fixes Applied
 - D2 SVGs rendered at 0px height without the CI post-processing width/height injection
