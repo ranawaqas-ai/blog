@@ -2,11 +2,8 @@
      Set synchronously in <head> (before paint) to avoid any flash of the sidebar. -->
 <script>if(location.pathname.indexOf('/posts/')===0)document.documentElement.classList.add('reading-mode');</script>
 
-<!-- Brand alignment: Source Serif 4 + Fira Code, the same request the portfolio makes -->
-<link rel="preload" as="style"
-  href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400..700&display=swap">
-<link rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400..700&display=swap">
+<!-- Fonts are self-hosted (see custom.css). Preload the one the text needs first. -->
+<link rel="preload" as="font" type="font/woff2" href="{{ '/assets/fonts/source-serif-4-latin.woff2' | relative_url }}" crossorigin>
 <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
 
 <!-- Mermaid (global): render ```mermaid fenced blocks in any post, no per-post front matter needed -->
