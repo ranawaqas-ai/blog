@@ -38,7 +38,7 @@ analytics:
 theme_mode: # [light|dark] — empty follows system preference
 
 cdn:
-avatar: /assets/img/profile.png
+avatar: /assets/img/profile-cutout.png
 toc: true
 
 comments:
