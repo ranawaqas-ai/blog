@@ -31,7 +31,7 @@ Full background on Rana Waqas is in `../context/` (one level up). Read these bef
 - **Ruby**: 3.4 (CI), local debug uses rbenv 3.2.0
 - **CI**: GitHub Actions — `.github/workflows/jekyll.yml`
 - **Comments**: Giscus (ranawaqas-ai/blog, Announcements category)
-- **Analytics**: GA4 G-ERD23968FK
+- **Analytics**: self-hosted Umami at `stats.waqasrana.space` (no cookies, production builds only). Google Analytics was removed on 2026-11-17.
 - **Domain**: blog.waqasrana.space (CNAME), deployed to GitHub Pages
 
 ## Key Config
